@@ -43,4 +43,4 @@ for(let i=0 ; i<str4.length; i++){
         }         
     }
     console.log(str4[i], ecount);
-}
+}// create object
