@@ -35,7 +35,11 @@ for(let i=0 ; i<str3.length; i++){
 
 let str4 = "programming";
 let ecount;
+let counted="";
 for(let i=0 ; i<str4.length; i++){
+    if (counted.includes(str4[i])) {
+        continue;
+    }
     ecount=1;      
     for(let j=i+1 ; j<str4.length; j++){                 
         if(str4[i]===str4[j]){
@@ -43,4 +47,5 @@ for(let i=0 ; i<str4.length; i++){
         }         
     }
     console.log(str4[i], ecount);
+    counted += str4[i];
 }// create object
