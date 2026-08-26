@@ -1,0 +1,114 @@
+// Hoisting means JavaScript processes certain declarations before executing the code
+
+// Function Hoisting
+greet();
+
+function greet() {
+    console.log("Hello");
+}
+// o/p: Hello Because the function declaration is available before execution reaches that line.
+
+// var Hoisting
+console.log(a);
+var a = 10;           // undefined: var is hoisted and initialized with undefined.
+
+
+// let Hoisting
+let a;
+console.log(a);         // undefined
+console.log(b);         // ReferenceError
+
+let b = 10;  
+// let is also hoisted, but it cannot be accessed before its declaration is initialized.
+// This period is called the: Temporal Dead Zone (TDZ)   
+
+console.log(a);
+const a = 10;            // // ReferenceError
+
+// Function expression with var
+
+greet();                          // TypeError: greet is not a function
+
+var greet = function() {
+    console.log("Hello");
+};
+
+// Function expression with let
+
+greet();                         // ReferenceError: Because greet is in the Temporal Dead Zone.
+
+let greet = function() {
+    console.log("Hello");
+};
+
+// practice ex:1
+var a = 10;
+
+function test() {
+    console.log(a);
+    var a = 20;
+}
+test();                     // undefined
+
+// practice ex:1
+
+let a = 10;
+
+function test1() {
+    console.log(a);
+    let a = 20;
+}
+test1();                     // ReferenceError
+
+// Object with var
+
+console.log(person);         // undefined
+
+var person = {
+    name: "Prajakta",
+    age: 30
+};
+
+// Object with let
+console.log(person);      // ReferenceError
+
+let person = {
+    name: "Prajakta",
+    age: 30
+};
+
+//Object with const
+console.log(person);       // ReferenceError
+
+const person = {
+    name: "Prajakta",
+    age: 30
+};
+
+// can we access an object's property before declaration?
+
+console.log(person.name);                   // TypeError
+
+var person = {
+    name: "Prajakta"
+};
+
+// Imp: The object is not hoisted but The variable that refers to the object is hoisted.
+
+let person = {
+    name: "Prajakta"
+};
+
+function test() {
+    console.log(person);
+
+    let person = {
+        name: "Rahul"
+    };
+}
+
+test();                       // ReferenceError: Cannot access 'person' before initialization
+
+
+
+

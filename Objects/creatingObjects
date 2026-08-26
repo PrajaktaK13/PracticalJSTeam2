@@ -1,0 +1,21 @@
+// An object is used to store related information together using key-value pairs.
+
+let person1 = {
+    name: "Pushpak",
+    age: 20,
+    city: "Pune"
+};
+
+let person2 = {
+    name: "Arun",
+    age: 30,
+    isEmployee: true,
+    salary: 50000
+};
+/* The object may contain datatypes:
+String
+Number
+Boolean
+Array
+Object
+Function */

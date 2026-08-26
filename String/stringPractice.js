@@ -107,7 +107,7 @@ console.log(Number.isNaN(null));                      // o/p: false
 
 // combining practice:
 
-console.log("" + 5);                                  // o/p: 5("5" its ctually string)
+console.log("" + 5);                                  // o/p: 5("5" its actually string)
 console.log("" - 5);                                  // o/p: -5
 console.log(null + 5);                                // o/p: 5
 console.log(null - 5);                                // o/p: -5

@@ -1,0 +1,168 @@
+// Method 1: Dot notation
+
+let person1 = {
+    name: "Arun",
+    age: 30,
+    isEmployee: true,
+    salary: 50000,
+    city: "Pune"
+};
+
+console.log(person1.name);                                     // o/p: Arun
+console.log(person1.age);                                      // o/p: 30
+console.log(person.city);                                     // o/p: Pune
+
+// Method 2: Bracket notation
+
+console.log(person1["name"]);                                  // o/p: Arun
+console.log(person1["age"]);                                   // o/p: 30
+console.log(person1["city"]);                                  // o/p: Pune
+
+// Adding a New Property
+
+// Objects are modifiable.
+// Suppose we have:
+let person2 = {
+    name: "Shri",
+    age: 30
+};
+// We can add:
+person2.city = "Pune";
+// Now the object becomes:
+person2 = {
+    name: "Shri",
+    age: 30,
+    city: "Pune"
+}
+// We can also use brackets:
+person2["salary"] = 50000;
+
+// now object becomes:
+
+person2 = {
+    name: "Shri",
+    age: 30,
+    city: "Pune",
+    salary : 50000
+}
+console.log(person2);                            // o/p: { name: 'Shri', age: 30, city: 'Pune', salary: 50000 }
+
+// Modifying a Property
+
+let person3 = {
+    name: "Arun",
+    age: 30
+};
+
+// We can change the age
+person3.age = 31;
+console.log(person3.age);                                         // o/p: 31
+
+let property = "name";
+console.log(person3[property]);                                   // o/p: Arun
+console.log(person3.property);                                    // o/p: undefined(should use only [] in this case)
+
+// Deleting a Property
+
+delete person3.age;
+
+console.log(person3);                                             // { name: 'Arun' }
+
+// Object with an Array
+
+let person4 = {
+    name: "Arun",
+    age: 30,
+    skills: ["Java", "JavaScript", "Selenium"]
+};
+console.log(person4);  // o/p: { name: 'Arun', age: 30, skills: [ 'Java', 'JavaScript', 'Selenium' ] }
+
+console.log(person4.skills);                     // o/p: ["Java", "JavaScript", "Selenium"]
+console.log(person4.skills[0]);                  // o/p: Java
+
+// object inside object
+// Objects can also contain other objects.
+
+let person5 = {
+    name: "Raj",
+    address: {
+        city: "Pune",
+        country: "India"
+    }
+};
+console.log(person5);  // o/p: { name: 'Raj', address: { city: 'Pune', country: 'India' } }
+
+// to access city
+
+console.log(person5.address.city);           // o/p: Pune
+// or
+console.log(person["address"]["city"]);      // o/p: Pune
+
+// Object with a Function
+
+let person6 = {
+    name: "Raj",
+
+    greet: function() {
+        console.log("Hello");
+    }
+};
+// To call the function:
+person6.greet();                     // o/p: Hello
+// A function stored inside an object is commonly called a method.
+
+// this keyword
+
+let person7 = {
+    name: "Prajakta",
+
+    greet: function() {
+        console.log("Hello " + this.name);
+    }
+};
+
+person.greet();                     
+/* o/p: Hello Prajakta
+here this.name means the name property belonging to the current object */
+
+// checking whether a property exists in an object.
+
+// in operator:
+
+let student = {
+    name: "Arun",
+    age: 30,
+    city: "Pune"
+};
+console.log("name" in student);                 // true
+console.log("salary" in student);               // false
+
+// hasOwnProperty():
+student.hasOwnProperty("name");                 // true
+
+// Object.hasOwn()
+console.log(Object.hasOwn(student, "name"));    // true
+console.log(Object.hasOwn(student, "salary"));  // true
+
+// Practice ex:1
+
+let employee1 = {
+    name: ""
+};
+
+console.log("name" in employee1);        // true
+console.log(employee1.name);             // blank
+
+// practice Ex:2
+
+let employee2 = {
+    age: 0
+};
+
+console.log(Object.hasOwn(employee2, "age"));      // true
+console.log(employee2.age);                        // false
+ 
+
+
+
+
