@@ -48,4 +48,72 @@ for(let i=0 ; i<str4.length; i++){
     }
     console.log(str4[i], ecount);
     counted += str4[i];
-}// create object
+}
+
+// Practice ex on string coversion
+let numG = 25;
+
+let strG = String(numG);
+
+console.log(strG + 5);                              // 255
+console.log(Number(strG) + 5);                      // 30
+console.log(typeof strG);                           // string
+
+// Ex2:
+let x = "10";
+let y = 20;
+
+console.log(x + y);                                 // o/p: 1020
+console.log(Number(x) + y);                         // o/p: 30
+console.log(String(y) + x);                         // o/p: 2010               
+console.log(typeof (String(y) + x));                // o/p: string
+
+// Examples on Number(), parseInt(), parseFloat(). NaN
+
+console.log(Number("25.5"));                        // o/p: 25.5
+console.log(parseInt("25.5"));                      // o/p: 25
+console.log(parseFloat("25.5"));                    // o/p: 25.5
+console.log(Number("25abc"));                       // o/p: NaN
+console.log(parseInt("25abc"));                     // o/p: 25
+console.log(parseFloat("25.75abc"));                // o/p: 25.75
+console.log(isNaN("100"));                          // o/p: false()                     
+/* : JavaScript effectively does:
+"100" → 100 so isNaN(100)-> false  */
+console.log(isNaN("hello"));                        // o/p: true
+console.log(Number.isNaN("hello"));                 // o/p: false
+/* Because "hello" is a string, not the actual NaN value. */
+
+/*isNaN(): Converts first, then checks.
+Number.isNaN():Does not convert, It returns true only if the value is actually NaN */
+
+let value = Number("hello");                         // Number("hello")-> NaN
+console.log(Number.isNaN(value));                    // o/p: true
+
+// Practice examples on "", " ", null, undefined
+
+console.log(Number(""));                              // o/p: 0
+console.log(Number(" "));                             // o/p: 0
+console.log(Number(null));                            // o/p: 0
+console.log(Number(undefined));                       // o/p: NaN
+console.log(Number(true));                            // o/p: 1
+console.log(Number(false));                           // o/p: 0
+
+console.log(isNaN(""));                               // o/p: false
+console.log(isNaN(undefined));                        // o/p: true
+console.log(Number.isNaN(undefined));                 // o/p: false
+
+console.log(isNaN(null));                             // o/p: false
+console.log(Number.isNaN(null));                      // o/p: false
+
+// combining practice:
+
+console.log("" + 5);                                  // o/p: 5("5" its ctually string)
+console.log("" - 5);                                  // o/p: -5
+console.log(null + 5);                                // o/p: 5
+console.log(null - 5);                                // o/p: -5
+console.log(true + 5);                                // o/p: 6
+console.log(false + 10);                              // o/p: 10
+console.log("10" + null);                             // o/p: 10null
+console.log("10" - null);                             // o/p: 10     
+console.log("5" + true);                              // o/p: 5true   
+console.log("5" - true);                              // o/p: 4         

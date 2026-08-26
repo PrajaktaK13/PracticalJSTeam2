@@ -112,3 +112,14 @@ let a = "10";
 let b = "20";
 let result = Number(a) + Number(b);
 console.log(result);                               // o/p: 30
+
+// Number to String
+
+let numF = 100;
+
+let strF = String(numF);
+
+console.log(strF);                                  // 100
+                                                    // string
+console.log(typeof strF);
+
