@@ -1,4 +1,4 @@
-// Hoisting means JavaScript processes certain declarations before executing the code
+// Hoisting = JavaScript processes declarations before executing the code.
 
 // Function Hoisting
 greet();

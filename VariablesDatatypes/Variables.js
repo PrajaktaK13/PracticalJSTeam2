@@ -21,4 +21,6 @@ id= 204;                            //Allowed as value can be reassigned to var.
 // console.log(name);                // not allowed as let has block scope.
 //console.log(number);               // not allowed as cosnt has block scope.
 console.log(passed);                 // allowed as var has fuction scope.
+
+
  

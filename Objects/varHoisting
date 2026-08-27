@@ -1,0 +1,124 @@
+// JavaScript does not literally move your code to the top.
+
+// "Hoisting" is just a convenient way to describe what happens during JavaScript's setup/creation phase.
+//  var       → hoisted + undefined
+
+// Ex:
+console.log(a);
+var a = 10;
+
+// It will actually get enerate by JS like:
+
+var a;        // declaration processed first
+
+console.log(a);
+
+a = 10;       // assignment happens here
+// o/p: undefined
+
+// Declaration vs Assignment
+
+var age = 30;
+
+/* There are two things happening:
+
+var age      → declaration
+age = 30     → assignment   
+
+so var age = 30; can be mentally separated into:
+var age;
+age = 30;
+
+With var, the declaration is processed during the setup phase, but the assignment happens when execution reaches that line.*/
+
+// var hoisting
+
+console.log(a);
+var a = 10;
+// During setup, JavaScript effectively has:
+var a = undefined;
+// During setup, JavaScript effectively has:
+var a = undefined;
+/* var declaration → hoisted + initialized with undefined
+assignment      → happens at original line */
+
+
+// Object with var
+
+console.log(person);         // undefined
+console.log(person.name);    // TypeError
+var person = {
+    name: "Prajakta",
+    age: 30
+};
+
+var a = 10;
+
+//function with var
+function test() {
+    console.log(a);
+    var a = 20;
+}
+test();                     // undefined
+
+// can we access an object's property before declaration?
+
+console.log(person.name);                   // TypeError
+
+var person = {
+    name: "Prajakta"
+};
+
+// Scope+hoisting
+
+var person = {
+    name: "Prajakta"
+};
+
+function test() {
+    console.log(person);
+
+    var person = {
+        name: "Rahul"
+    };
+}
+
+test();                        // undefined
+
+// practice ex:1
+console.log(arr);              // undefined
+console.log(arr[0]);           // TypeError
+var arr= [1,2,3,4];
+
+console.log(str1);              // undefined
+console.log(str1[0]);           // TypeError
+var str1= "Hello";     
+
+// objects property
+var person;
+console.log(person.age);        // TyepError
+
+// Hoisting inside if
+
+console.log(x);                 //  undefined
+if (true) {
+    var x = 20;
+}
+
+// practice ex2:
+
+var a;
+console.log(a);                   // undefined
+a = 100;
+console.log(a);                   // 100
+
+//var variable function
+
+greet();                         // TypeError: grret is nota fuction
+var greet = function() {
+    console.log("Hello");
+};
+
+
+
+

@@ -142,7 +142,7 @@ student.hasOwnProperty("name");                 // true
 
 // Object.hasOwn()
 console.log(Object.hasOwn(student, "name"));    // true
-console.log(Object.hasOwn(student, "salary"));  // true
+console.log(Object.hasOwn(student, "salary"));  // false
 
 // Practice ex:1
 

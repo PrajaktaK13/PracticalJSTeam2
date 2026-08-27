@@ -1,0 +1,89 @@
+/*
+TDZ = Temporal Dead Zone, after decaration and before initialization
+During this period, age exists in the scope but cannot be accessed.*/
+
+console.log(age); //  ReferenceError: Cannot access 'age' before initialization
+let age = 30;
+
+// let inside the block
+if (true) {
+    let a = 20;
+}
+console.log(a);       // ReferenceError: a is not defined as let is block scoped
+let a = 10;
+
+// let with function
+function test() {
+    console.log(a);
+    let a = 20;
+}
+test();                 // ReferenceError: can not access a before initialization
+
+//let with function
+
+let b = 10;
+
+function test() {
+    console.log(b);
+    let b = 20;
+}
+test();                  // ReferenceError: can not access a before initialization
+
+// object with let
+
+console.log(person1);         // ReferenceError
+console.log(person1.name);    // ReferenceError
+let person1 = {
+    name: "Prajakta",
+    age: 30
+};
+
+// Scope+hoisting
+
+let person2 = {
+    name: "Prajakta"
+};
+function test() {
+    console.log(person2); 
+    let person2 = {
+        name: "Rahul"
+    };
+}
+test();                        // ReferenceError: Cannot access 'person2' before initialization
+
+// practice ex:1
+console.log(arr);             // ReferenceError: Cannot access 'arr' before initialization            
+console.log(arr[0]);          // ReferenceError: Cannot access 'arr' before initialization 
+let arr= [1,2,3,4];
+
+console.log(str1);            // ReferenceError: Cannot access 'str1' before initialization      
+console.log(str1[0]);         // ReferenceError: Cannot access 'str1' before initialization        
+let str1= "Hello";     
+
+// objects property
+let person;
+console.log(person.age);        // TyepError
+
+// Hoisting inside if
+
+console.log(x);                 //  ReferenceError
+
+if (true) {
+    let x = 20;
+}
+
+// practice ex2:
+
+let c;
+console.log(c);                   // undefined
+c = 100;
+console.log(c);                   // 100
+
+
+// let variable function
+
+greet();                         // ReferenceError: Because greet is in the Temporal Dead Zone.
+
+let greet = function() {
+    console.log("Hello");
+};
