@@ -15,7 +15,7 @@ console.log("New array length after push is",pushResult);      // o/p: New array
 let fruitsB = ["Apple", "Banana"];
 
 fruitsB.push("Mango", "Orange");                        
-console.log(fruitsB);                                   // o/p: [ 'Apple', 'Banana', 'Mango', 'Orange' ]
+console.log(fruitsB);                                           // o/p: [ 'Apple', 'Banana', 'Mango', 'Orange' ]
                
 
 

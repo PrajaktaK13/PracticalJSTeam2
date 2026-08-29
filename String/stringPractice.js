@@ -116,4 +116,27 @@ console.log(false + 10);                              // o/p: 10
 console.log("10" + null);                             // o/p: 10null
 console.log("10" - null);                             // o/p: 10     
 console.log("5" + true);                              // o/p: 5true   
-console.log("5" - true);                              // o/p: 4         
+console.log("5" - true);                              // o/p: 4   
+
+// Reverse string without reverse
+
+let str = "JavaScript";
+let reverse="";
+
+for(let i=str.length-1; i>=0; i--){
+    reverse=reverse+str[i];     
+}
+console.log(reverse);
+
+// find shortest word
+
+let stri= "JavaScript is good language"; 
+
+let words= stri.split(" ");
+let shortest=words[0];
+for(let i=0; i<words.length; i++){
+    if(words[i].length<shortest.length){
+        shortest=words[i];
+    }
+}
+console.log(shortest);
