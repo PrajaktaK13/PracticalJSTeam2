@@ -9,9 +9,9 @@ console.log(numbers1);                     // o/p: [10, 20, 30, 40]
 
 let numbers2 = [10, 20, 30];
 
-let result = numbers2.pop();
+let resultt = numbers2.pop();
 
-console.log(result);                        // o/p: 30 
+console.log(resultt);                        // o/p: 30 
 console.log(numbers2);                      // o/p: [10, 20]
 
 // Ex:3
@@ -75,17 +75,17 @@ console.log("Largest Number is ",largestnum);        // o/p : Largest number is 
 
 // Ex:8 Second largest number
 
-let arr1 = [1002, 928, 2003, 504, 834, 5004, 201, 308];
-let largest = arr1[0];
-let secondLargest= arr1[1]; 
+let arrr1 = [1002, 928, 2003, 504, 834, 5004, 201, 308];
+let largest = arrr1[0];
+let secondLargest= arrr1[1]; 
 
 for(let i= 0; i<arr1.length; i++){
      if(arr1[i] > largest){
          secondLargest = largest;
-         largest = arr1[i];                 
+         largest = arrr1[i];                 
         
-     } else if(arr1[i] > secondLargest){
-          secondLargest=arr1[i];
+     } else if(arrr1[i] > secondLargest){
+          secondLargest=arrr1[i];
      }     
 }
 console.log(`Largest number is ${largest} and Second largest number is ${secondLargest}`);
@@ -123,22 +123,22 @@ printNumbers(numbersY);
 
 // Find the second smallest number without using sort().
 
-let arr2 = [1002, 928, 2003, 504, 834, 5004, 201, 308];
-let smallest = arr2[0];
-let secondSmallest= arr2[1]; 
+let arrr2 = [1002, 928, 2003, 504, 834, 5004, 201, 308];
+let smallest = arrr2[0];
+let secondSmallest= arrr2[1]; 
 
-for(let i= 0; i<arr2.length; i++){
-     if(arr2[i] < smallest){
+for(let i= 0; i<arrr2.length; i++){
+     if(arrr2[i] < smallest){
          secondSmallest = smallest;
-         smallest = arr2[i];                 
+         smallest = arrr2[i];                 
         
-     } else if(arr2[i] < secondSmallest){
-          secondSmallest=arr2[i];
+     } else if(arrr2[i] < secondSmallest){
+          secondSmallest=arrr2[i];
      }     
 }
 console.log(`Smallest number is ${smallest} and Second smallest number is ${secondSmallest}`);
 
-// third larest
+// third largest
 
 let arr3 = [1002, 928, 2003, 504, 834, 5004, 201, 308];
 let large = arr3[0];
@@ -162,30 +162,30 @@ for(let i= 0; i<arr3.length; i++){
 console.log(`Largest number is ${large} and Second largest number is ${secondLarge} third laregest number is ${thirdLarge}`);
 
      
-// second laregst with duplicate values
+// third laregst with duplicate values
 
-let arr4 = [50, 20, 100, 80, 30, 80, 70, 80, 60];
-let large1 = arr4[0];
-let secondLarge1= arr4[1]; 
-let thidLarge1= arr4[2];
+let ar4 = [50, 20, 100, 80, 30, 80, 70, 80, 60];
+let large1 = ar4[0];
+let secondLarge1= ar4[1]; 
+let thidLarge1= ar4[2];
 
-for(let i=0; i<arr4.length; i++){
+for(let i=0; i<ar4.length; i++){
      
-          if(arr4[i]>large1 && large1!=arr4[i]){
+          if(ar4[i]>large1 && large1!=ar4[i]){
                thidLarge1= secondLarge1;
                secondLarge1= large1;
-               large1 = arr4[i];   
-          }else if(arr4[i]>secondLarge1 && arr4[i]!=large1){
+               large1 = ar4[i];   
+          }else if(ar4[i]>secondLarge1 && ar4[i]!=secondLarge1){
                thidLarge1=secondLarge1;
-               secondLarge1=arr4[i];
-          }else if(arr4[i]>thidLarge1 && arr4[i]!=secondLarge1 && arr4[i]!=large1){
-               thidLarge1=arr4[i];
+               secondLarge1=ar4[i];
+          }else if(ar4[i]>thidLarge1 && ar4[i]!=secondLarge1 && ar4[i]!=large1){
+               thidLarge1=ar4[i];
           }
      }
 
 console.log(thidLarge1, secondLarge1, large1);
 
-// Remove duplicate values
+// find duplicate values
 
 let arr = [10, 20, 10, 30, 20, 40, 30, 50, 40];;
 
@@ -243,12 +243,13 @@ for(let i=0; i<arr2.length; i++){
 
 // first non repeated character 
 
-let arr3 = [10, 20, 60, 30, 20, 40, 30, 50, 70];
+let arrr3 = [10, 20, 60, 30, 20, 40, 30, 50, 70];
 let result3 = [];
 
-for(let i=0; i<arr3.length; i++){
-    if(arr3.indexOf(arr3[i])==arr3.lastIndexOf(arr3[i])){
-        result3.push(arr3[i]);                      
+for(let i=0; i<arrr3.length; i++){
+    if(arrr3.indexOf(arrr3[i])==arrr3.lastIndexOf(arrr3[i])){
+        result3.push(arrr3[i]); 
+        break;                     
     }
 }
  console.log(result3); 

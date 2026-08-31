@@ -140,3 +140,65 @@ for(let i=0; i<words.length; i++){
     }
 }
 console.log(shortest);
+
+// find the first repeated character
+
+let str5 = "programming";
+let result="";
+
+for(let i=0; i<str5.length; i++){
+    if(result.includes(str5[i])){
+    console.log("First duplicate:", str5[i]);
+        break;
+    }else{
+        result=result+str5[i];
+    }
+}
+
+// first non repeated character
+
+let str6 = "programming"; 
+
+for(let i=0; i<str6.length; i++){
+    if(str6.indexOf(str6[i])==str6.lastIndexOf(str6[i])){
+        console.log("first non repeated character is ",str6[i]);
+        break;
+    }
+}
+
+// all non repeated characters
+
+let str7 = "programming"; 
+console.log("Non repeated charcaters are: ");
+for(let i=0; i<str7.length; i++){    
+    if(str7.indexOf(str7[i])==str7.lastIndexOf(str7[i])){
+        console.log(str7[i]);        
+    }
+}
+
+// remove spaces
+
+let str8 = "JavaScript is very easy";
+let newstr1="";
+for(let i=0; i<str8.length; i++){   
+     if(str8[i]!=" "){
+        newstr1= newstr1+str8[i];
+     }
+}
+console.log(newstr1);
+
+// replace space with "-"
+
+str8 = "JavaScript is very easy";
+let newstr2="";
+for(let i=0; i<str8.length; i++){   
+     if(str8[i]==" "){
+        newstr2= newstr2+"-";
+     }else{
+        newstr2=newstr2+str8[i];
+     }
+}
+console.log(newstr2);
+
+
+

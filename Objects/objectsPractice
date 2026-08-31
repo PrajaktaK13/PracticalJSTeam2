@@ -1,0 +1,356 @@
+// keys of objects
+let student = {
+    name: "Rahul",
+    age: 25,
+    city: "Pune",
+    role: "Tester"
+};
+// console.log(Object.keys(student));
+
+// keys and values of objects with for loop
+ let keys = Object.keys(student);            // keys = ["name", "age", "city", "role"];
+// for(let i=0; i<keys.length; i++){
+//     console.log(keys[i], student[keys[i]]);
+// }
+
+// Using the same object, print only the values whose value is a string/ number.
+
+for(let i=0; i<keys.length; i++){
+    if(typeof student[keys[i]]=== "number"){
+        console.log(student[keys[i]]);
+    }
+}
+
+// Find the sum of all numeric values and highst numeric value
+
+let student1 = {
+    name: "Rahul",
+    age: 25,
+    marks: 85,
+    city: "Pune",
+    experience: 5,
+    role: "Tester"
+};
+
+let keys1= Object.keys(student1);
+let sum=0;
+let highest=0
+let lowest = 1000;
+let keyHighest="";
+let keyLowest="";
+for(let i=0; i<keys1.length; i++){
+    if(typeof student1[keys1[i]]=== "number"){
+        sum = sum + student1[keys1[i]];
+        if(student1[keys1[i]]>highest){
+        highest= student1[keys1[i]];  
+        keyHighest = keys1[i];          
+    }
+    if(student1[keys1[i]]<lowest){
+        lowest= student1[keys1[i]];  
+        keyLowest = keys1[i]; 
+    }
+}
+}
+console.log(keyHighest,"=", highest);
+console.log(keyLowest, "=", lowest);
+console.log(sum);
+
+// count string values
+
+let employee = {
+    name: "Prajakta",
+    age: 30,
+    city: "Pune",
+    role: "Tester",
+    experience: 7
+};
+let keys2= Object.keys(employee);
+console.log(keys2);
+let stringCount=0;
+let numCount=0;
+for(let i=0; i<keys2.length; i++){
+    if(typeof employee[keys2[i]]=="string"){
+        stringCount++;
+    }
+    if(typeof employee[keys2[i]]=="number"){
+        numCount++;
+    }
+}
+console.log("String values are",stringCount, "and Number values are",numCount);
+
+// longest and shortest string value
+
+let employe = {
+    name: "Prajakta",
+    city: "Pune",
+    role: "AutomationTester",
+    company: "Mindfire"
+};
+let eKeys= Object.values(employe);
+let longest1= "";
+let longestKey="";
+let shortest="";
+let shortestKey="";
+for(let i=0; i<eKeys.length; i++ ){
+    if(typeof employe[eKeys[i]] == "string"){
+        if(employe[eKeys[i]].length > longest1.length){
+            longest1= employe[eKeys[i]];
+            longestKey= eKeys[i];
+        }
+        if(shortest === "" || employe[eKeys[i]].length < shortest.length){
+            shortest= employe[eKeys[i]];
+            shortestKey= eKeys[i];
+        }
+    }
+}
+console.log(longestKey,"=",longest1);
+console.log(shortestKey,"=",shortest);
+
+// Print elemnts of array in objects
+
+let employee1 = {
+    name: "Prajakta",
+    age: 30,
+    skills: ["JavaScript", "Selenium", "Playwright", "SQL"]
+};
+
+let skills= employee1.skills;
+for(let i=0; i<skills.length; i++){
+    console.log(skills[i]);
+}
+
+// find duplicate value in object
+
+let employee2 = {
+    name: "Rahul",
+    city: "Pune",
+    role: "Tester",
+    department: "QA",
+    location: "Pune",
+    fname:"Rahul",
+    city1:"Pune"
+};
+
+let emValues= Object.values(employee2);
+let values=[];
+
+for(let i=0; i<emValues.length; i++){
+        if(values.includes(emValues[i])){
+         console.log(emValues[i]);                    
+    }else{
+       values.push(emValues[i]);
+    }
+}
+
+// count duplicates values with nested loop
+
+let employee3 = {
+    name: "Rahul",
+    city: "Pune",
+    role: "Tester",
+    department: "QA",
+    location: "Pune",
+    fname: "Rahul",
+    city1: "Pune"
+};
+let evalues3= Object.values(employee3);
+let duplicates = [];
+
+for(let i = 0; i < evalues3.length; i++){
+
+    if(!duplicates.includes(evalues3[i])){
+
+        let count = 0;
+
+        for(let j = 0; j < evalues3.length; j++){
+
+            if(evalues3[i] === evalues3[j]){
+                count++;
+            } 
+        }
+
+        console.log(evalues3[i], "=", count);
+
+        duplicates.push(evalues3[i]);
+    }
+}
+console.log(duplicates);
+
+// find the key of duplicate value
+
+let employee4 = {
+    name: "Rahul",
+    city: "Pune",
+    role: "Tester",
+    department: "QA",
+    location: "Pune"
+};
+
+let eKeys4 = Object.keys(employee4);
+
+for(let i = 0; i < eKeys4.length; i++){
+
+    for(let j = i + 1; j < eKeys4.length; j++){
+
+        if(employee4[eKeys4[i]] === employee4[eKeys4[j]]){
+
+            console.log(eKeys4[i], "=", employee4[eKeys4[i]]);
+            console.log(eKeys4[j], "=", employee4[eKeys4[j]]);
+
+        }
+
+    }
+}
+
+// Find the key having the longest value
+
+let employee5 = {
+    name: "Prajakta",
+    city: "Pune",
+    role: "AutomationTester",
+    company: "Mindfire",
+    department: "QualityAssurance1"
+};
+let ekeys5= Object.keys(employee5);
+let longestKey5="";
+let longestvalue5="";
+let shortestKeys5 = ekeys5[0];
+let shortestvalues = employee5[ekeys5[0]];
+console.log(shortestKeys5.length);
+for(let i=0; i<ekeys5.length; i++){
+    if(employee5[ekeys5[i]].length > longestvalue5.length){
+        longestKey5=ekeys5[i];
+        longestvalue5=employee5[ekeys5[i]];
+    }
+    if(employee5[ekeys5[i]].length < shortestvalues.length){
+        shortestKeys5=ekeys5[i];
+        shortestvalues=employee5[ekeys5[i]];
+    }
+}
+console.log(longestKey5,"=",longestvalue5);
+console.log(shortestKeys5,"=",shortestvalues);
+
+/* Find all three:
+
+Highest number  → age = 30
+Lowest number   → experience = 7
+Longest string  → role = AutomationTester */
+
+let employee7 = {
+    name: "Prajakta",
+    age: 30,
+    city: "Pune",
+    role: "AutomationTester",
+    experience: 7,
+    company: "Mindfire"
+};
+
+let keys7= Object.keys(employee7);
+let largeNum=0;
+let largeNumKey="";
+let shortNum;
+let shortNumKey="";
+let longString="";
+let longStringKey="";
+
+for(let i=0; i<keys7.length; i++){
+    if(typeof employee7[keys7[i]] == "string"){
+        if(employee7[keys7[i]].length > longString.length){
+            longString = employee7[keys7[i]];
+            longStringKey=keys7[i];
+        }
+    }else{
+        if(employee7[keys7[i]] > largeNum){
+            largeNum = employee7[keys7[i]];
+            largeNumKey= keys7[i];
+        }
+        if(shortNum === undefined || employee7[keys7[i]] < shortNum){
+            shortNum= employee7[keys7[i]];
+            shortNumKey= keys7[i];
+        }
+    }
+}
+console.log(`Highest number is ${largeNumKey}=${largeNum}, Lowest number is ${shortNumKey}=${shortNum}, Longest string is ${longStringKey}=${longString}`);
+
+// Find the most frequent value and its count
+
+let employee8 = {
+    name: "Rahul",
+    city: "Pune",
+    role: "Tester",
+    department: "QA",
+    location: "Pune",
+    fname: "Rahul",
+    city1: "Pune",
+    role1: "Tester"
+};
+let values8= Object.values(employee8);
+let maxCount = 0;
+let result = "";
+
+for(let i = 0; i < values8.length; i++){
+
+    let count = 0;
+
+    for(let j = 0; j < values8.length; j++){
+
+        if(values8[i] === values8[j]){
+            count++;
+        }
+    }
+
+    if(count > maxCount){
+        maxCount = count;
+        result = values8[i];
+    }
+}
+console.log(result,"=",maxCount);
+console.log(`Most frequent value is ${result} and it occurs ${maxCount} times`);
+
+
+// Most frequesnt value and theire keys
+
+let employee9 = {
+    name: "Rahul",
+    city: "Pune",
+    role: "Tester",
+    department: "QA",
+    location: "Pune",
+    fname: "Rahul",
+    city1: "Pune",
+    role1: "Tester"
+};
+
+let keys9= Object.keys(employee9);
+let maxCount1=0;
+let result1="";
+let resultkey1=[];
+
+for(let i=0; i<keys9.length; i++){
+    let count=0;
+    let resultkey=[];
+    for(let j=0; j<keys9.length; j++){
+        if(employee9[keys9[i]]===employee9[keys9[j]]){
+            count++;
+                       
+        }
+    }
+    if(count>maxCount1){
+        maxCount1=count;
+        result1 = employee9[keys9[i]];
+        
+    }
+           
+}
+for(let i = 0; i < keys9.length; i++){
+
+    if(employee9[keys9[i]] === result1){
+
+        resultkey1.push(keys9[i]);
+    }
+}
+console.log(resultkey1, result1)
+
+
+
+    
