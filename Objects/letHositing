@@ -45,9 +45,10 @@ let person2 = {
 };
 function test() {
     console.log(person2); 
-    let person2 = {
+    person2 = {
         name: "Rahul"
     };
+    console.log(person2);
 }
 test();                        // ReferenceError: Cannot access 'person2' before initialization
 

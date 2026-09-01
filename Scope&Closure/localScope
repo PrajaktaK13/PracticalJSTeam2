@@ -1,0 +1,129 @@
+//A variable is local when it is declared inside a function or block and can only be accessed within that scope.
+
+// Ex:1- Basic local Variable accessed locally
+
+function test() {
+    let name = "Prajakta";
+
+    console.log(name);                   // Prajakta
+}
+
+test();
+
+// Ex2: Basic local Variable accesses globally
+
+function test() {
+    let name1 = "Prajakta";
+
+    console.log(name1);                   // Prajakta
+}
+
+test();
+console.log(name1);                       // ReferenceError
+
+//Example 2: Different functions have different local variables
+
+function test1() {
+    let x = 10;
+    console.log(x);                 //10
+}
+
+function test2() {
+    let x = 20;
+    console.log(x);                 //20
+}
+
+test1();
+test2();
+
+// Example 3: Local variable cannot be accessed by another function
+
+function test1() {
+    let name2 = "Prajakta";
+}
+
+function test2() {
+    console.log(name2);              // ReferenceError
+}
+
+test1();
+test2();
+
+// Block-local variable
+function test() {
+
+    if(true) {
+
+        let x = 10;
+
+        console.log(x);            //10
+    }
+}
+
+test();
+
+//but
+
+function test() {
+
+    if(true) {
+        let x = 10;
+    }
+
+    console.log(x);                  // ReferenceError
+}
+
+test();
+
+// object and class scope
+
+// Class scope
+
+class Student {
+
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    display() {
+        console.log(this.name);
+        console.log(this.age);
+    }
+}
+
+let student1 = new Student("Prajakta", 30);
+
+student1.display();    // Prajakta
+                       // 30
+
+// object scope
+
+let employee = {
+    name: "Prajakta",
+    age: 30
+};
+
+function showEmployee() {
+    console.log(employee.name);
+    console.log(employee.age);
+}
+
+showEmployee();                         // Prajakta, 30
+console.log(employee.name);             // Prajakta
+// As employee is in the global scope, so the function can access it.
+
+// but
+
+function showEmployee() {
+
+    let employee = {
+        name: "Prajakta",
+        age: 30
+    };
+
+    console.log(employee.name);     // Prajakta
+}
+
+showEmployee();
+console.log(employee.age);         // ReferrenceError

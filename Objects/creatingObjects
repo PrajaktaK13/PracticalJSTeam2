@@ -41,17 +41,17 @@ let student2 = new Student("Rahul", 25, "Developer");
 console.log(student1.name);                           // Prajakta
 console.log(student2.name);                           // Rahul
 
-// 4. ES6 class
+// 4. class
 
-class Student {
+class Student1 {
     constructor(name, age, role) {
         this.name = name;
         this.age = age;
         this.role = role;
     }
 }
-let student3 = new Student("Prajakta", 30, "Tester");
-let student4 = new Student("Rahul", 25, "Developer");
+let student3 = new Student1("Prajakta", 30, "Tester");
+let student4 = new Student1("Rahul", 25, "Developer");
 
 console.log(student3.name);            // Prajakta
 console.log(student4.role);            // Developer

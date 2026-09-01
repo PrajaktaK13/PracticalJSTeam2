@@ -54,8 +54,6 @@ for(let i=2; i<=5; i++){
     }
     console.log(row);
 }
-
-
       
 // Ex:5
          

@@ -1,0 +1,27 @@
+// Lexical scope means the scope of a function is determined by where the function is written in the code.
+// Lexical Scope = A function can access variables based on where that function is written/nested in the code.
+
+let x = 10;
+
+function outer() {
+
+    let y = 20;
+
+    function inner() {
+
+        let z = 30;
+        if(true){
+            let q=  90;
+            console.log(q);
+        }
+
+        console.log(x);           // 10
+        console.log(y);           // 20
+        console.log(z);           // 30
+        console.log(q);           // ReferenceError
+        
+    }
+        inner();
+    
+}
+outer();
