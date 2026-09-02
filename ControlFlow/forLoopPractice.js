@@ -128,7 +128,7 @@ for(let i= 1; i<=3; i++){
 let count1=0;
 for(let i=5; i>=1; i--){
     count1= count1+i;
-    let l=count1;
+    let l = count1;
     let row = "";
 
     for(let j=1; j<=i; j++){
@@ -214,7 +214,6 @@ let t=1;
 for(let i=1; i<=5; i++){
     let row= "";
     for(let j=1; j<=i; j++){
-
         if(j==1){
             row= row + String.fromCharCode(64 + t);
             t++;
@@ -228,10 +227,9 @@ for(let i=1; i<=5; i++){
 
 // Mixed pattern2
 
-
+let h=1;
 for(let i=1; i<=6; i++){
-    let row="";
-    let h=1;
+    let row="";    
     for(let j=1; j<=i; j++){
         if (i%2 != 0){
             row= row+"*";
@@ -273,18 +271,13 @@ for(let i=1; i<=6; i++){
     for(let i=1; i<=6; i++){
         let row= "";
         for (let j=1; j<=6; j++){
-            if(i==6){
+            if(i==6 || j==1 || j==i){
                 row=row + "*";
-            }
-            else{
-                if(j==1 || j==i){
-                    row = row + "*";
-                }
-                else{
+            }else{
                     row = row +" ";
                 }
             }
-        }
+        
         console.log(row);
     }
 
@@ -308,7 +301,39 @@ for(let i=1; i<=6; i++){
     }
 
 
+// pyramid stars with odd stars in row
+let row;
+for(let i=1; i<6; i++){
+    row="";
+    // spaces
+    for(let j=1; j<6-i; j++){
+        row= row + " ";
+    }
+    // stars
+    for(let j=0; j<(2*i-1); j++){
+        row=row + "*";
+    }
+    console.log(row);
+}
 
+// hollow rectangle
+
+for(let i=1; i<=6; i++){
+
+    let row = "";
+
+    for(let j=1; j<=6; j++){
+
+        if(i==1 || i==6 || j == 1 || j == 6){
+            row = row + "*";
+
+        }else{
+                row = row + " ";
+            }
+                   
+        }
+        console.log(row);
+    }
 
 
 
