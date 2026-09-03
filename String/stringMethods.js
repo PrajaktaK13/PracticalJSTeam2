@@ -58,6 +58,12 @@ let text8 = "JavaScript";
 console.log(text8.slice(0, 4));                     // o/p: Java
 
 // slice() supports negative indexes.
+// slice swaps if start > end
+
+let text = "JavaScript";
+
+console.log(text.slice(6, 2));      // ""
+console.log(text.substring(6, 2));  // vaSc-> it coverts slice(2,6)
 
 let text9 = "JavaScript";
 

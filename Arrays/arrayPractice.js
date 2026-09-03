@@ -164,7 +164,7 @@ console.log(`Largest number is ${large} and Second largest number is ${secondLar
      
 // third laregst with duplicate values
 
-let ar4 = [50, 20, 100, 80, 30, 80, 70, 80, 60];
+let ar4 = [50, 20, 100, 80, 30, 80, 70, 80, 60, 70];
 let large1 = ar4[0];
 let secondLarge1= ar4[1]; 
 let thidLarge1= ar4[2];
@@ -175,10 +175,10 @@ for(let i=0; i<ar4.length; i++){
                thidLarge1= secondLarge1;
                secondLarge1= large1;
                large1 = ar4[i];   
-          }else if(ar4[i]>secondLarge1 && ar4[i]!=secondLarge1){
+          }else if(ar4[i]>secondLarge1){
                thidLarge1=secondLarge1;
                secondLarge1=ar4[i];
-          }else if(ar4[i]>thidLarge1 && ar4[i]!=secondLarge1 && ar4[i]!=large1){
+          }else if(ar4[i]>thidLarge1 && ar4[i]!=secondLarge1){
                thidLarge1=ar4[i];
           }
      }
@@ -256,13 +256,13 @@ for(let i=0; i<arrr3.length; i++){
 
  // Duplicate characters without nested loop
 
-let arr4 = [10, 20, 60, 30, 20, 30, 80, 50, 70];
+let arr4 = [10, 20, 60, 30, 20, 30, 80, 50, 70, 70];
 let result4 = [];
 
 for(let i=0; i<arr4.length; i++){
     if(arr4.indexOf(arr4[i])!= arr4.lastIndexOf(arr4[i])){
         if((result4.includes(arr4[i]))){
-            break;
+            continue;
         }else{
             result4.push(arr4[i]);
         }
@@ -277,16 +277,14 @@ let arr5 = [10, 20, 10, 30, 20, 40, 30, 50, 40];;
 let result5=[];
 
 for(let i=0; i<arr5.length; i++){
-    for(let j=i+1; j<arr5.length; j++){
-            if(arr5[i] == arr5[j]){
-                if(arr5.includes([arr5[i]])){
-                    continue;
-        }else{
-             result5.push(arr5[i]);
+    if(!result5.includes(arr5[i])){
+        for(let j=i+1; j<arr5.length; j++){
+             if(arr5[i]==arr5[j]){
+                result5.push(arr5[i]);
+             }
         }
+
     }
-   
-}
 }
 console.log(result5);
 

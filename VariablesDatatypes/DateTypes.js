@@ -16,29 +16,30 @@ console.log(
 // console.log(today.getMinutes());    // returns timing minutes
 // console.log(today.getSeconds());    // returns timing seconds
 
-// let date = new Date("2026-08-17");   // creates specific date
-// //console.log(date);
+let date = new Date("2026-08-17");   // creates specific date
+console.log(date);
 
-let date1= new Date();
-// date1.setFullYear(2030);
+//let date1= new Date();
+date1.setFullYear(2030);
 // console.log(date1);
 // date1.setMonth(4);
 // console.log(date1);
 // date1.setDate(1);
-// console.log(date1);
+console.log(date1);
 
 
 let currDate = new Date();
-console.log(currDate.getDate()-10);   // returns only date(dd) 10 days ago
-console.log(currDate.setDate(currDate.getDate()-10));
-console.log(currDate);  
-currDate.setDate(currDate.getDate()-10);
-console.log(currDate);                // returns full date(yyyy-mm-dd and time) 10 days ago
+console.log(currDate);
+// console.log(currDate.getDate()-10);   // returns only date(dd) 10 days ago (avoid negative date)
+// console.log(currDate.setDate(currDate.getDate()-10));
+// console.log(currDate);  
+// currDate.setDate(currDate.getDate()-10);
+// console.log(currDate);                // returns full date(yyyy-mm-dd and time) 10 days ago
             
 
-// console.log(currDate.getMonth()-5);    // returns index of current month-5
-// currDate.setMonth(currDate.getMonth()-5);
-// console.log(currDate);                 // returns full date 5 months ago
+console.log(currDate.getMonth()-5);    // returns index of current month-5
+console.log(currDate.setMonth(currDate.getMonth()-5));
+console.log(currDate);                 // returns full date 5 months ago
 
 
 // console.log(currDate.getFullYear()-5); // returns only year, 5 years ago
@@ -46,8 +47,8 @@ console.log(currDate);                // returns full date(yyyy-mm-dd and time) 
 // console.log(currDate);                  // returns full date 5 years ago
 
 
-// let date1 = new Date("2026-08-10");
-// let date2 = new Date("2026-08-20");
+let date1 = new Date("2026-08-10");
+let date2 = new Date("2026-08-20");
 
 // // Check which date is earlier
 // if(date1<date2){
@@ -58,10 +59,11 @@ console.log(currDate);                // returns full date(yyyy-mm-dd and time) 
 
 // //check the difference between dates in number of days
 
-// let difference= date2.getTime()- date1.getTime();
-// console.log(difference);                     //return diffrence in timestamp(millisecond)
-// let days= difference/ (1000 * 60 * 60 * 24); // convert timestamp(milliseconds) in to days
-// console.log("Days: ",days);
+let difference= date2.getTime()- date1.getTime();
+console.log(date1.getTime());
+console.log(difference);                     //return diffrence in timestamp(millisecond)
+let days= difference/ (1000 * 60 * 60 * 24); // convert timestamp(milliseconds) in to days
+console.log("Days: ",days);
 
 
 // //Check whether two dates are equal

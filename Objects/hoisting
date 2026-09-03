@@ -2,18 +2,20 @@
 
 // Function Hoisting
 greet();
-
 function greet() {
     console.log("Hello");
-}
+
 // o/p: Hello Because the function declaration is available before execution reaches that line.
 
+}
 // var Hoisting
+
 console.log(a);
 var a = 10;           // undefined: var is hoisted and initialized with undefined.
 
 
 // let Hoisting
+
 let a;
 console.log(a);         // undefined
 console.log(b);         // ReferenceError
