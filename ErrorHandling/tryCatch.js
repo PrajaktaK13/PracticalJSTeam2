@@ -21,7 +21,7 @@ Step 3 → doesn't execute */
 
 // Error handling allows us to handle the error instead of letting it unexpectedly stop the program.
 
-// try...catch : The most important error-handling mechanism
+// try catch : The most important error-handling mechanism
 
 try {
     console.log(lname);
@@ -32,17 +32,18 @@ catch (error) {
 
 
 // o/p: An error occurred
-// as name does not exist JS moves to Catch
+// as name does not exist so JS moves to Catch
 
 /* catch (error): error is a variable containing information about the error.*/
-// You can do:
+// We can do:
+
 try {
     console.log(fname);
 }
 catch (error) {
-    console.log(error);        // ReferenceError: fname is not defined
+    console.log(error);                // ReferenceError: fname is not defined
 }
-
+// or
 try {
     console.log(fname);
 }
@@ -52,7 +53,7 @@ catch (error) {
      
 }
 
-// Practice q1:
+// Practice Q1:
 
 try {
     console.log("Hello");
@@ -67,7 +68,8 @@ catch (error) {
 // O/p: Hello
 //      Error ocurred
 
-// Finally
+
+// Finally block
 
 try {
     console.log("Try");
@@ -82,29 +84,37 @@ finally {
 Try
 Finally */
 
+
+
 // throw: throw is used when you want to intentionally create an error in JavaScript.
+// The statements after throw will not be executed.
+// Ex1:
 
 let age = 15;
 
 if (age < 18) {
     throw new Error("Age must be 18 or above");
+    console.log("Hello");                         // not executed
 }
+// o/p: Error: Age must be 18 or above
 
-// The statements after throw will not be executed.
 
+// Ex2:
 console.log("Start");
 
-throw new Error("Something went wrong");
+//throw new Error("Something went wrong");
+console.log("End");                          // not executed
 
 /* o/p: 
 Start
 Error: Something went wrong 
+
 Start -> throw executes -> Error -> End is NOT executed */
 
 // throw with try catch
 
 try {
-    let age = 15;
+    let age = 25;
 
     if (age < 18) {
         throw new Error("Age must be 18 or above");
@@ -133,12 +143,12 @@ catch (error) {
 
 console.log("Done");
 
-/* Not eligible
-   Done  */
+/* o/p:  Not eligible
+         Done               */
 
 
    // throw with functions
-
+// Ex1:
    function checkAge(age) {
 
     if (age < 18) {
@@ -148,6 +158,7 @@ console.log("Done");
     return "Eligible";
 }
 
+// Ex2:
 try {
     let result = checkAge(15);
     console.log(result);                // Not Eligible
@@ -156,7 +167,7 @@ catch (error) {
     console.log(error.message);
 }
 
-// throw with funtion ex2
+// Ex3:
 
 function divide(a, b) {
 
@@ -177,7 +188,8 @@ catch (error) {
 
 console.log("Test completed");
 /* Cannot divide by zero
-Test completed   */
+   Test completed            */
+
 
 // why we write finally
 

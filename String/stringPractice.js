@@ -295,7 +295,7 @@ let fileName2 = "automation_test.pdf";
 console.log(fileName2.slice(0,fileName2.lastIndexOf(".")));   // automation_test
 
 
-// Practice
+// Extract username and domian
 
 let email1 = "  PRAJAKTA.KAWADE@GMAIL.COM  ";
 
@@ -327,6 +327,7 @@ for(let i=0; i<emailPart1.length; i++){
 console.log(emailPart1); // rajakta
 
 console.log(email2.charAt(0)+emailPart3+emailPart2);       // p*******@gmail.com
+
 
 // count each character
 
@@ -376,3 +377,35 @@ for(let i=0; i < text3.length ; i++){
     }
 }
 console.log(result3);    // aton
+
+// Password validation
+
+let password = "Test@1234567";
+let res;
+if(password.length>=8 && password.includes("@")){
+    for(let i=0; i<password.length; i++){
+        res=false;
+         if("0123456789".includes(password[i])){
+           res=true;
+           break;
+         }
+    }    
+}
+if(res==true){
+    console.log("Password is valid");
+}else{
+    console.log("Password is not valid");
+}
+
+
+// Extract only numbers
+
+let text5 = "Java123Script456";
+let num = "";
+for(let i=0; i<text5.length; i++){    
+    if("0123456789".includes(text5[i])){
+         num= num + text5[i];
+    }
+}
+console.log(num);            // 123456
+

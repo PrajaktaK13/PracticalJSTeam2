@@ -1,0 +1,85 @@
+/* What is a Promise?
+
+A Promise is an object that represents a result that we will get in the future.
+Pramises has 2 states:
+1. Pending:    ⏳ Waiting...- The operation is still running.
+2. Successful: ✅ Success  - The operation completed successfully.
+3. Rejected    ❌ Failed   - The operation failed.                   */
+
+// creating Promise
+
+let promise = new Promise((resolve, reject) => {
+
+});
+/* resolve("Success"); - The operation completed successfully.
+   reject("Failed");   - The operation failed.    */
+
+// Practice Question:
+
+let promise1 = new Promise((resolve, reject) => {
+
+    let success = true;
+
+    if (success) {
+        resolve("Login successful");
+    } else {
+        reject("Login failed");
+    }
+
+});        // It does not print anything as here we only creates and resolves the Promise.
+
+
+// .then() - We use .then() to get the result of promise
+
+let promise2 = new Promise((resolve, reject) => {
+    resolve("Login successful");
+});
+
+promise2.then((result) => {
+    console.log(result);             // Login successful
+}); 
+
+// So
+resolve("Login successful"); // provides the result
+then((result) => {          // Receives/handles the result
+    console.log(result);     // result receives whatever value was passed to resolve().In this case "Login successful"
+});                          // .then() receives the value without changing its type.
+
+// .then() with calculation
+
+let promise3 = new Promise((resolve, reject) => {
+    resolve(10);
+});
+
+promise3.then((result) => {
+    console.log(result + 5);          // o/p: 15
+}); 
+
+
+// .catch()- reject() sends the value to .catch():
+
+let promise4 = new Promise((resolve, reject) => {
+    reject("Login failed");
+});
+
+promise4.catch((error) => {
+    console.log(error);              // o/p: Login failed
+});
+
+// resolve(value)  →  .then(result)
+// reject(value)   →  .catch(error)
+
+let promise5 = new Promise((resolve, reject) => {
+    reject("Something went wrong");
+});
+
+promise5
+    .then((result) => {
+        console.log("Success:", result);
+    })
+    .catch((error) => {
+        console.log("Error:", error);
+    });
+// o/p: Error: Something went wrong
+
+
