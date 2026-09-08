@@ -16,6 +16,7 @@ login("admin", "1234")
 .catch((error) =>{
     console.log(error);
 });
+
 login("admin", "9999")
 .then((result)=>{
     console.log(result); 
@@ -392,3 +393,40 @@ async function processOrders() {
     console.log(sum);    
 }
 processOrders();
+/* o/p: [ 100, 225, 50, 360, 150 ]
+885   */
+
+
+
+// async/await + Promise + loop + conditional retry + results.
+
+let orders2 = [100, 300, 500, 200];
+let successfulPayments= [];
+let failedPayments=[];
+
+function processPayment(amount, attempt) {
+    if(amount === 100 || amount === 200){
+        return Promise.resolve(amount);
+    }else if(amount === 300 && attempt>= 2 ){
+        return Promise.resolve(amount);
+    }else{
+        return Promise.reject(amount);
+    }        
+}
+
+let attempt=1;
+async function testPayment() {
+    for (let i=0; i<orders2.length; i++){
+    try{        
+         let result= await processPayment(orders2[i], attempt);  
+         successfulPayments.push(result);   
+    }
+    catch(failedAmount){
+        let result= failedAmount;
+        attempt++;         
+        failedPayments.push(result);     
+    }
+}  
+    console.log(successfulPayments, failedPayments);         
+}
+testPayment();

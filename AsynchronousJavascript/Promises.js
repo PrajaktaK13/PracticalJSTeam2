@@ -1,8 +1,6 @@
 /* What is a Promise?
 A Promise is an object that represents the result of an asynchronous operation that may be available now or later.
 
-A Promise is an object that represents a result that we will get in the future.
-
 Pramises has 2 states:
 1. Pending:    ⏳ Waiting...- The operation is still running.
 2. Successful: ✅ Success  - The operation completed successfully. or
@@ -15,8 +13,8 @@ let promise = new Promise((resolve, reject) => {
 
 });
 /* new Promise(...):  creates the Promise object
-   resolve("Success"); - fulfills that Promise with the value "Success".
-   reject("Failed");   - The operation failed.    */
+   resolve; - fulfills that Promise.
+   reject;   - The operation failed.    */
 
 // Practice Question:
 
@@ -71,6 +69,8 @@ promise4.catch((error) => {
     console.log(error);              // o/p: Login failed
 });
 
+// Promise like a one-time decision: once it becomes successful or failed, its state cannot be changed.
+// The first resolve() or reject() wins. Once a Promise is settled, its state and value cannot be changed. 
 // resolve(value)  →  .then(result)
 // reject(value)   →  .catch(error)
 
@@ -107,7 +107,7 @@ p10
     console.log(result);
 })
 .catch((error) => {
-    console.log(error);
+    console.log(error);  // Login failed
 });
 
 // Promise chaining:
@@ -165,11 +165,11 @@ promise8
         if(result<50){
             throw new Error("Failed");
         }else{
-            console.log(result);
+            return result;
         }        
     })
     .then((result) => {
-        console.log("Second then");
+        console.log("Second then", result);
     })
     .catch((error) => {
         console.log(error.message);
@@ -201,7 +201,7 @@ promise9
     // O/p: Login successful
     //      Process completed
 
-    // Example 2 — Promise fails
+// Example 2 — Promise fails
 
     let promise10 = new Promise((resolve, reject) => {
     reject("Login failed");
@@ -250,9 +250,8 @@ Promise.all([promise1, promise2, promise3]);
 // It waits for all Promises to succeed.
 
 // Ex1:
-
-let p1 = Promise.resolve("Login");
 let p2 = Promise.resolve("User");
+let p1 = Promise.resolve("Login");
 let p3 = Promise.resolve("Orders");
 
 Promise.all([p1, p2, p3])
@@ -308,4 +307,79 @@ let pz = new Promise(resolve => {
 Promise.all([px, py, pz])
     .then(results => console.log(results));    // o/p: [ 'A', 'B', 'C' ]
 
-    
+
+    // Promise.race():
+// Promise.race() is used when you have multiple Promises and 
+// you want the result of whichever Promise settles first.
+
+let pa = new Promise((resolve) => {
+    setTimeout(() => {
+        resolve("First");
+    }, 2000);
+});
+
+let pb = new Promise((resolve) => {
+    setTimeout(() => {
+        resolve("Second");
+    }, 1000);
+});
+
+Promise.race([pa, pb])
+    .then((result) => {
+        console.log(result);
+    });
+//o/p: Second
+
+
+
+// Promise.race with failure
+
+let pc = new Promise((resolve) => {
+    setTimeout(() => {
+        resolve("Success");
+    }, 3000);
+});
+
+let pd = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        reject("Failed");
+    }, 1000);
+});
+
+Promise.race([pc, pd])
+    .then((result) => {
+        console.log(result);
+    })
+    .catch((error) => {
+        console.log(error);
+    });  
+// o/p: Failed
+
+// First settled Promise wins — whether fulfilled or rejected
+
+// Practice ex:
+let p11 = new Promise((resolve) => {
+    setTimeout(() => {
+        resolve("User");
+    }, 2000);
+});
+
+let p12 = new Promise((resolve) => {
+    setTimeout(() => {
+        resolve("Orders");
+    }, 1000);
+});
+
+let p13 = new Promise((resolve) => {
+    setTimeout(() => {
+        resolve("Products");
+    }, 3000);
+});
+
+Promise.race([p11, p12, p13])
+    .then((result) => {
+        console.log(result);
+    });                       // Orders
+
+// Even though Orders wins the race, p10 and p30 don't get cancelled automatically.
+// They continue running in the background.
