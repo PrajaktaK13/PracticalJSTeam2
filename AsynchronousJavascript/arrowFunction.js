@@ -71,3 +71,43 @@ const getUser = () => {
 console.log(getUser());    // { name: 'Prajakta', role: 'Tester' }
 
 // async
+
+
+const getUserData = () => {
+    return new Promise((resolve, reject) => { 
+        setTimeout(() => {
+            let success = true;
+
+            if (success) {
+                resolve("User data fetched successfully");
+            } else {
+                reject("Failed to fetch user data");
+            }
+
+        }, 2000);
+    });
+};
+
+
+// Async arrow function
+const getUser1 = async () => {
+
+    console.log("Start");
+
+    try {
+        // Wait for the Promise to complete
+        let result = await getUserData();
+
+        console.log(result);
+
+    } catch (error) {
+        console.log("Error:", error);
+    }
+    console.log("End");
+}; 
+getUser1();
+/* o/p:
+Start
+User data fetched successfully
+End
+*/

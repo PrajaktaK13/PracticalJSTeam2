@@ -1,0 +1,101 @@
+// Spread operator is written as ...
+// Its job is to unpack or expand the elements of an array or the properties of an object.
+
+// Spread with an Array
+
+let fruits = ["Apple", "Mango", "Banana"];
+
+let newFruits = [...fruits];  // Take each fruit and put them in to new array 'newFruits'.
+
+console.log(newFruits);   // [ 'Apple', 'Mango', 'Banana' ]
+
+// why we use spread opeartor
+// If we write like:
+
+let fruits1 = ["Apple", "Mango", "Banana"];
+
+let newFruits1 = fruits1;
+
+newFruits1.push("Orange");
+
+console.log(fruits1);      // [ 'Apple', 'Mango', 'Banana', 'Orange' ]
+// here fruits also get changed because both fruits1 and newFruits1 are refering to same array.
+// but with spread operator new array modification does not redlect on old array.
+
+
+// Combining two arrays
+
+let fruits2 = ["Apple", "Mango"];
+let vegetables2 = ["Potato", "Tomato"];
+
+let food = [...fruits2, ...vegetables2];
+
+console.log(food);     // [ 'Apple', 'Mango', 'Potato', 'Tomato' ]
+
+
+
+// Adding new elements while spreading
+
+let fruits3 = ["Apple", "Mango"];
+
+let newFruits3 = ["Banana", ...fruits3, "Orange"];
+
+console.log(newFruits3);     // [ 'Banana', 'Apple', 'Mango', 'Orange' ]
+
+
+// Spread with Objects
+
+let user = {
+    name: "Prajakta",
+    age: 30
+};
+
+let newUser = {
+    ...user
+};
+
+console.log(newUser);    // { name: 'Prajakta', age: 30 }
+
+
+// Add/change properties while spreading
+
+let user1 = {
+    name: "Prajakta",
+    age: 30
+};
+
+let newUser1 = {
+    ...user1,
+    role: "Tester"
+};
+
+console.log(newUser1);          // { name: 'Prajakta', age: 30, role: 'Tester' }
+
+// You can also override a property:
+
+let newUser2 = {
+    ...user1,
+    age: 35,
+    role: "Tester"
+};
+console.log(newUser2);    // { name: 'Prajakta', age: 35, role: 'Tester' }
+
+
+// Pass array elemnts as a function arguements
+
+let numbers = [10, 20, 30];
+
+function add(a, b, c) {
+    return a + b + c;
+}
+
+console.log(add(...numbers));   // 60
+
+
+// String with string
+
+let name1 = "QA";
+
+let letters = [...name1];
+
+console.log(letters);       // [ 'Q', 'A' ]
