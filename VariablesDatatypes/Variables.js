@@ -22,5 +22,20 @@ id= 204;                            //Allowed as value can be reassigned to var.
 //console.log(number);               // not allowed as cosnt has block scope.
 console.log(passed);                 // allowed as var has fuction scope.
 
+// different types of variables:
 
+let x = 10;              // outer/global-level variable
+
+class Employee {
+
+    static company = "Mindfire";  // static property
+
+    constructor(name) {
+        this.name = name;         // instance property
+    }
+
+    display() {
+        let salary = 50000;       // local variable
+    }
+}
  
