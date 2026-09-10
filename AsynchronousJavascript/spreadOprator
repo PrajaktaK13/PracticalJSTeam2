@@ -99,3 +99,6 @@ let name1 = "QA";
 let letters = [...name1];
 
 console.log(letters);       // [ 'Q', 'A' ]
+
+// nested
+// rest

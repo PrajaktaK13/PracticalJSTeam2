@@ -143,6 +143,7 @@ console.log(iterator9.next());   // { value: [ 'role', 'Tester' ], done: false }
 console.log(iterator9.next());   // { value: [ 'age', 38 ], done: false }
 console.log(iterator9.next());   // { value: undefined, done: true }
 
+
 // custom iterator add.
 
 let numbers10 = [10, 20, 30];

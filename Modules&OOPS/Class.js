@@ -52,6 +52,10 @@ user3.displayUser();   // Rahul Developer
 user4.displayUser();   // Sneha Manager
 
 
+/* oops: abstraction, encapsulation, polymorphism, 
+Inheritance: types, scopes, private, public, protector
+constructor: all types
+import, export */
 
 
 

@@ -1,6 +1,9 @@
 // Inheritance: One class can reuse the properties and methods of another class.
 // Class Inheritance: Inheritance allows one class to acquire the properties and methods of another class.
-// we use the extends keyword to establish inheritance
+// we use the extends keyword to establish inheritance.
+
+
+// Write with with private, public, protected
 
 
 // Parent class constrictor: 
@@ -324,3 +327,120 @@ let seniorTester = new SeniorTester(
 seniorTester.applyLeave(4);
 seniorTester.runAutomation();
 seniorTester.displayTeam();
+
+// Public , Private and Protected:
+
+// Public: A public property or method is something that can be accessed from outside the class.
+// Class properties and methods are public by default.
+
+class Employee {
+
+    constructor(name) {
+        this.name = name;         // public property
+    }
+
+    display() {                   // public method
+        console.log("Employee:", this.name);
+    }
+}
+
+class Tester extends Employee {
+
+    show() {                       // public method
+        console.log("Tester:", this.name);
+    }
+}
+
+let test = new Tester("Prajakta");
+
+console.log(test.name);     // Prajakta
+test.display();             // Employee: Prajakta
+test.show();                // Tester: Prajakta
+
+
+// Private:
+
+// Private properties:
+
+class Employee {
+
+    #salary;
+
+    constructor(name, salary) {
+        this.name = name;
+        this.#salary = salary;
+    }
+
+    getSalary() {
+        return this.#salary;
+    }
+}
+
+class Tester extends Employee {
+
+    show() {
+        console.log(this.name);
+        //console.log(this.#salary); // wrong as #salary is private method
+        console.log(this.getSalary());// so we can use getSalary() to access #salary.
+    }
+}
+
+let test1 = new Tester("Prajakta", 50000);
+
+test1.show();
+
+// Private Method:
+
+class Employee {
+
+    #calculateBonus() {
+        return 5000;
+    }
+
+    showBonus() {
+        console.log(this.#calculateBonus());
+    }
+}
+
+class Tester extends Employee {
+
+    testBonus() {
+        //this.#calculateBonus();  // wrong as calculateBonus is private method.
+        this.showBonus(); //     // so we can call showBonus() to access calculateBonus.
+    }
+}
+
+let test2 = new Tester();
+
+test2.testBonus();
+
+
+/* Protected: This property is intended for internal/subclass use. Please don't access it directly.
+But JavaScript does not enforce this. 
+    JavaScript does not have a built-in protected access modifier. Developers commonly use an underscore 
+prefix as a convention to indicate that a property or method is intended for internal or subclass use, 
+but it is not enforced by JavaScript */
+
+class Employee {
+
+    constructor(name, salary) {
+        this.name = name;
+        this._salary = salary;
+    }
+}
+
+class Tester extends Employee {
+
+    showSalary() {
+        console.log(this._salary);
+    }
+}
+
+class Tester2 extends Tester{
+    showSalary() {
+        console.log(this._salary);
+    }
+}
+let test3 = new Tester2("Prajakta", 50000);
+
+test3.showSalary();   // 50000 // That's because _salary is not truly protected.
