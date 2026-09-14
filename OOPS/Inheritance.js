@@ -147,6 +147,7 @@ class Tester extends Employee {
 
 let tester4 = new Tester();
 
+
 tester4.work("Prajakta");  // Tester is testing the application
 
 
@@ -256,7 +257,7 @@ class Tester extends Employee {
 let tester10 = new Tester();
 
 console.log(tester10 instanceof Tester);   // true: meaning tester10 is object of Tester class?
-console.log(tester10 instanceof Employee); // true: meaning tester10 is object of Employe class?
+console.log(tester10 instanceof Employee); // true: meaning tester10 is object of Employe class?// parent class also
 
 
 // Method lookup / prototype chain — understand how JS finds a method when the child doesn't have it
@@ -444,3 +445,151 @@ class Tester2 extends Tester{
 let test3 = new Tester2("Prajakta", 50000);
 
 test3.showSalary();   // 50000 // That's because _salary is not truly protected.
+
+
+
+// Ex with public , private and protected
+
+class Employee {
+    #employeeId;
+
+    constructor(name, salary, employeeId) {
+
+        // Public
+        this.name = name;
+
+        // "Protected" convention
+        this._salary = salary;
+
+        // Private
+        this.#employeeId = employeeId;
+    }
+   
+    displayEmployee() {
+        console.log("Name:", this.name);
+        console.log("Salary:", this._salary);
+        console.log("Employee ID:", this.#employeeId);
+    }
+    empidDetails(){
+        console.log("ID", this.#employeeId);
+       }
+}
+
+
+class Tester extends Employee {
+
+    showDetails() {
+
+        // Public
+        console.log("Name:", this.name);          // ✅
+
+        // Protected convention
+        console.log("Salary:", this._salary);     // ✅
+
+        // Private
+       // console.log("ID:", this.#employeeId);     // ❌
+       
+    }    
+    
+}
+
+let test4 = new Tester("Prajakta", 50000, "EMP101");
+
+test4.showDetails();  
+/* o/p: Name: Prajakta
+Salary: 50000  */
+
+test4.empidDetails();  // ID EMP101
+
+// With multilevel Inheritance:
+
+class Employee {
+
+    #employeeId;
+
+    constructor(name, salary, employeeId) {
+        this.name = name;
+        this._salary = salary;
+        this.#employeeId = employeeId;
+    }
+
+    getEmployeeId() {                  // this is the public method who is returnig private property.
+        return this.#employeeId;
+    }
+}
+
+class Tester extends Employee {
+
+    showTesterDetails() {
+        console.log(this.name);
+        console.log(this._salary);
+        console.log(this.getEmployeeId());
+    }
+}
+
+class SeniorTester extends Tester {
+
+    display() {
+        console.log("Senior Tester");
+        console.log(this.name);
+        console.log(this._salary);
+        console.log(this.getEmployeeId());
+    }
+}
+
+let seniorTester1 = new SeniorTester(
+    "Prajakta",
+    60000,
+    "EMP101"
+);
+
+seniorTester1.display();
+/* o/p: Senior Tester
+Prajakta
+60000
+EMP101   */
+
+// with super()
+
+class Employee {
+
+    #employeeId;
+
+    constructor(name, employeeId) {
+        this.name = name;
+        this.#employeeId = employeeId;
+    }
+
+    getEmployeeId() {
+        return this.#employeeId;
+    }
+}
+
+class Tester extends Employee {
+
+    constructor(name, employeeId, tool) {
+        super(name, employeeId);
+        this.tool = tool;
+    }
+
+    showDetails() {
+        console.log(this.name);
+        console.log(this.tool);
+        console.log(this.getEmployeeId());
+    }
+}
+
+let test5 = new Tester(
+    "Prajakta",
+    "EMP101",
+    "Playwright"
+);
+
+test5.showDetails();
+
+/* o/p:
+Prajakta
+Playwright
+EMP101  */
+
+// import, export

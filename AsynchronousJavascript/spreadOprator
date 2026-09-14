@@ -101,4 +101,33 @@ let letters = [...name1];
 console.log(letters);       // [ 'Q', 'A' ]
 
 // nested
-// rest
+
+function add(a, b, c) {
+    return a + b + c;
+}
+
+function calculate(numbers) {
+    return add(...numbers);
+}
+
+let values = [10, 20, 30];
+
+console.log(calculate(values));  // 60
+
+
+// Rest Operator
+
+// Spread → unpack
+
+let numbers1 = [10, 20, 30];
+
+console.log("Spread:",...numbers1);
+
+// Rest → collect  
+
+function test(...numbers) {
+    console.log("Rest:",numbers);
+}
+
+test(10, 20, 30);
+
