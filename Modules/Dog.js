@@ -10,5 +10,5 @@ class Dog extends Animal1 {
 
 let dog = new Dog();
 
-dog.eat();     // Animal is eatiang
+dog.eat();     // Animal is eating
 dog.bark();    // Dog is eating

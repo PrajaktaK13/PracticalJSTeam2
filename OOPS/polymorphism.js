@@ -64,7 +64,7 @@ for (let emp of employees) {
                      // Developer coding
 }
 
-// Methode Overloding not possible.
+// Methode Overloding not possible, if we write multiple methods with same name , latest get overrides previous.
 class Employee {
     work() {
         console.log("Employee working");

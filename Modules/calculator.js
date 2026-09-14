@@ -7,11 +7,11 @@
     return a - b;
 }
 
-   export function mul(a, b){
+   function mul(a, b){
     return a * b;
 }
 
-   export function div(a, b){
+   function div(a, b){
     return a / b;
 }
-
+export{mul, div};

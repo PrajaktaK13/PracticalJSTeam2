@@ -1,6 +1,6 @@
 // 1. Encapsulation:
 
-// Private property:
+// Protected property:
 class User{
     constructor(name){
         this.name=name;
