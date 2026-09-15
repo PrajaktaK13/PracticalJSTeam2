@@ -10,6 +10,7 @@ JavaScript does not support traditional method overloading like Java.
 JavaScript mainly demonstrates polymorphism through:
 Method overriding / runtime polymorphism   */
 
+//ex1:
 class Animal {
     sound() {
         console.log("Animal makes a sound");

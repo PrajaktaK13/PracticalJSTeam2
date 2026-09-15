@@ -501,6 +501,8 @@ Salary: 50000  */
 
 test4.empidDetails();  // ID EMP101
 
+
+
 // With multilevel Inheritance:
 
 class Employee {
