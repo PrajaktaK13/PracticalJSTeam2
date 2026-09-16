@@ -32,8 +32,8 @@ class Cat extends Animal {
 let dog = new Dog();
 let cat = new Cat();
 
-dog.sound();   // Dog barks
-cat.sound();   // Cat meows
+dog.sound();   // Dog barks            // Dog overrides Animal class sound() method
+cat.sound();   // Cat meows            // cat overrides Animal class sound() method
 
 //ex2
 
@@ -65,12 +65,12 @@ for (let emp of employees) {
                      // Developer coding
 }
 
-// Methode Overloding not possible, if we write multiple methods with same name , latest get overrides previous.
+// Methode Overloding not possible, if we write multiple methods with same name , latest overrides previous.
 class Employee {
-    work() {
+    work() {                            // method with no parameters
         console.log("Employee working");
     }
-    work(name){
+    work(name){                         // same method with parameter
         console.log(name);
     }
     

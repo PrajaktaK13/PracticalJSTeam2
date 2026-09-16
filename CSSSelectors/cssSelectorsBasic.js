@@ -1,8 +1,8 @@
 /*   CSS Selectors:
 
-page:
-website:
-url:
+page: home page
+website: https://www.amazon.in/
+url: https://www.amazon.in/
 
 A CSS selector is a pattern used to identify HTML elements on a webpage.
 Ex:
