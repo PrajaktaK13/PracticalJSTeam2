@@ -18,7 +18,7 @@ Ex1: html: <a href="/ref=nav_logo" id="nav-logo-sprites" class="nav-logo-link na
         amazonLogo:[id='nav-logo-sprites']               // need to write like this
 
 Ex2: address: [id='glow-ingress-line1']
-Ex3: updateLocation: [id='glow-ingress-line2']
+Ex3: updateLocation: [id='glow-ingress-line2']/#glow-ingress-line2
 
 
 
@@ -125,6 +125,8 @@ input, button : matches 4 elements
 
 Ex1: input,span
 Ex2: input,button
+
+in css who is stable?
 
 
 

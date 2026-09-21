@@ -261,7 +261,66 @@ yield* → delegate/yield values from another iterable or generator  */
 
 
 
+// dummy data
 
+// Generate Unique Email Addresses
+
+function* emailGenerator() {
+    let count = 1;
+
+    while (true) {
+        yield `testuser${count}@gmail.com`;
+        count++;
+    }
+}
+
+const emails = emailGenerator();
+
+console.log(emails.next().value);   // testuser1@gmail.com
+console.log(emails.next().value);   // testuser2@gmail.com
+console.log(emails.next().value);   // testuser3@gmail.com
+
+
+
+// Ex2:
+
+function* employeeGenerator() {
+    let id = 101;
+
+    while (true) {
+        yield {
+            name: `Employee${id}`,
+            email: `employee${id}@test.com`,
+            employeeId: id
+        };
+
+        id++;
+    }
+}
+
+const employees = employeeGenerator();
+
+console.log(employees.next().value);   // { name: 'Employee101', email: 'employee101@test.com', employeeId: 101 }
+console.log(employees.next().value);   // { name: 'Employee102', email: 'employee102@test.com', employeeId: 102 }
+console.log(employees.next().value);   // { name: 'Employee103', email: 'employee103@test.com', employeeId: 103 }
+
+
+// with loop:
+
+function* emailGenerator() {
+    let count = 1;
+
+    while (true) {
+        yield `testuser${count}@gmail.com`;
+        count++;
+    }
+}
+
+const emails1 = emailGenerator();
+
+for (let i=0; i<=5; i++){
+    console.log(emails1.next().value); 
+}
 
 
      
