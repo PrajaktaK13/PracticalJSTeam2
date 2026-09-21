@@ -25,20 +25,23 @@ Ex1: https://login.yahoo.com/
 
 next: page.getByRole('button' , {name: 'Next'});
 
-Ex2:
+Ex2: next: page.getByRole('button' , {name: 'Next', exact: true}); 
+This means:I want the button whose accessible name is exactly Next.
+
+Ex3:
 username: page.getByrole('textbox' ,{name: 'Username, email or phone number'});
 
 
 
 2. getByLabel(): 
 
-Ex: serchBox: page.getByLabel('twotabsearchtextbox');
+Ex: serchBox: page.getByLabel('Search Amazon.in');
 
 
 
-3. getByText:
+3. getByText: finds an element based on the visible text displayed on the page.
 
-searchBox: page.getByText('Search Amazon.in');
+Ex: HelloSignin: page.getByText('Hello, sign in');
 
 
 
@@ -47,7 +50,7 @@ searchBox: page.getByText('Search Amazon.in');
    title: page.getByTitle('Online Shopping site in India: Shop Online for Mobiles, Books, Watches, Shoes and More - Amazon.in');
 
     In tital tag whichever text will be there we have to add it.
-    
+
 
 
 5. getByPlaceHolder:
