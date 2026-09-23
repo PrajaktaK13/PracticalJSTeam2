@@ -182,4 +182,170 @@ Order ID: ABC         ❌
 | `i`   | Ignore case              |
 
 
+
+with test function , problems
+
+1. ^ — Starts with
+
+let regex = /^Hello/;
+
+console.log(regex.test("Hello World")); // true
+console.log(regex.test("Hi Hello"));    // false
+
+2. $ — Ends with
+
+let regex = /World$/;
+
+console.log(regex.test("Hello World")); // true
+console.log(regex.test("World Hello")); // false
+
+
+3. Starts AND ends
+
+let regex = /^Hello World$/;
+
+console.log(regex.test("Hello World")); // true
+console.log(regex.test("Hi Hello World")); // false
+console.log(regex.test("Hello World Test")); // false
+
+
+4. Contains:
+
+let regex = /Playwright/;
+
+console.log(regex.test("I am learning Playwright")); // true
+console.log(regex.test("Playwright automation"));    // true
+console.log(regex.test("I am learning Selenium"));   // false
+
+5. [^ ] — NOT
+
+let regex = /[^0-9]/; 
+
+console.log(regex.test("123"));  // false
+console.log(regex.test("123a")); // true
+
+⚠️ Notice that ^ has two meanings:
+
+^abc       → starts with abc
+[^0-9]     → NOT a number
+
+6. . — Any character
+
+let regex = /c.t/;              // . means almost any single character.
+
+console.log(regex.test("cat")); // true
+console.log(regex.test("cot")); // true
+console.log(regex.test("cut")); // true
+
+
+7. * — Zero or more
+
+let regex = /ab*c/;  // Means a, followed by zero or more b, followed by c.
+
+console.log(regex.test("ac"));    // true
+console.log(regex.test("abc"));   // true
+console.log(regex.test("abbbc")); // true
+
+
+8. + — One or more
+
+let regex = /ab+c/;      // Now at least one b is required.
+
+console.log(regex.test("ac"));    // false
+console.log(regex.test("abc"));   // true
+console.log(regex.test("abbbc")); // true
+
+
+9. ? — Zero or one
+
+let regex = /colou?r/;     // The u is optional.
+
+console.log(regex.test("color"));  // true
+console.log(regex.test("colour")); // true
+
+
+
+10. {n} — Exact number
+
+let regex = /^\d{4}$/;  // exactly 4 digits
+
+console.log(regex.test("1234")); // true
+console.log(regex.test("123"));  // false
+console.log(regex.test("12345")); // false
+
+
+
+11. {n,m} — Range
+
+let regex = /^\d{6,10}$/;   // Between 6 and 10 digits.(min 6 max 10)
+
+let regex = /^\d{6,10}$/;
+
+console.log(regex.test("12345"));       // false → 5 digits
+console.log(regex.test("123456"));      // true  → 6 digits
+console.log(regex.test("1234567"));     // true  → 7 digits
+console.log(regex.test("12345678"));    // true  → 8 digits
+console.log(regex.test("123456789"));   // true  → 9 digits
+console.log(regex.test("1234567890"));  // true  → 10 digits
+console.log(regex.test("12345678901")); // false → 11 digits
+
+
+
+12. \d — Digit
+
+let regex = /^\d+$/;     // only numbers
+
+console.log(regex.test("12345")); // true
+console.log(regex.test("123a"));  // false
+
+
+
+13. \w — Word character 
+
+let regex = /^\w+$/;         // Matches letters, numbers and underscore.(A-Z, a-z, 0-9, _ underscore)
+
+console.log(regex.test("Test123")); // true
+console.log(regex.test("Test_123")); // true
+console.log(regex.test("Test@123")); // false
+
+
+
+14. \s — Whitespace
+
+let regex = /\s/;
+
+console.log(regex.test("Hello World")); // true
+console.log(regex.test("HelloWorld"));  // false
+
+
+15. | — OR
+
+let regex = /Chrome|Firefox/;
+
+console.log(regex.test("Chrome browser"));  // true
+console.log(regex.test("Firefox browser")); // true
+console.log(regex.test("Safari browser"));  // false
+
+16. \W — NOT a word character
+
+\W → anything that is NOT a word character
+
+ex: space, @ , # , -, . , !
+
+let regex = /\W/;
+
+console.log(regex.test("QA Engineer")); // true  → space
+console.log(regex.test("QA@123"));      // true  → @
+console.log(regex.test("QA-123"));      // true  → -
+console.log(regex.test("QA_123"));      // false
+console.log(regex.test("QA123"));       // false
+
+\D: not a digit
+\S: not a white space.
+
+
+
+
+
+
 */

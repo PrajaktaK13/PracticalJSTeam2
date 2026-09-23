@@ -12,8 +12,9 @@ Ex3: pageNo: .pagination-paginationMeta
 
 // with page no should be done.
 
-https://www.smashingmagazine.com/category/javascript/
+Ex4: https://www.flipkart.com/
 
-Ex4: specificPage: a[href="/categories/javascript/page/2/"];
+specificPage: a.i2eZXn:nth-of-type(3);
+
 */
 

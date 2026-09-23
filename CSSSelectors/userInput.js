@@ -76,9 +76,17 @@ Ex1: await page.locator(div[class='VfPpkd-aPP78e']).selectOption('india');
 
 
 
+//userInput with function:
 
+function getCheckboxLocator(className) {
+    return `.${className}`;
+}
 
+let selector = getCheckboxLocator('a-icon a-icon-checkbox');
 
-
+await page.locator(selector).check();
 
 */
+
+
+

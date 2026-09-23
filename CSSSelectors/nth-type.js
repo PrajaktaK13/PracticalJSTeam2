@@ -25,7 +25,7 @@ Ex: input:nth-of-type(2)
 
 This selects an element based on its position among ALL its sibling elements.
 
-Ex: input:nth-child(2s)
+Ex: input:nth-child(2)
 
 
 difference between nth-of-type and nth-child:
