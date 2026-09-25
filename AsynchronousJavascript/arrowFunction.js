@@ -111,3 +111,25 @@ Start
 User data fetched successfully
 End
 */
+
+const user = {
+    name: "Prajakta",
+
+    greet: () => {
+        console.log(this.name);
+    }
+};
+
+user.greet();     // undefined
+
+
+const user1 = {
+    name: "Prajakta",
+
+    greet: function() {
+        console.log(this.name);
+    }
+};
+
+user1.greet();          // Prajakta
+// Arrow functions don't have their own this; they inherit this from the surrounding lexical scope.

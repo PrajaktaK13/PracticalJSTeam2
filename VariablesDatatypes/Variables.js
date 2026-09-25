@@ -10,6 +10,16 @@ var id= 201;
 id= 204;                            //Allowed as value can be reassigned to var.
 
 
+let num1= 12;
+//let num1= 16;                       // Not allowed as value can not be redeclared to let
+
+const num2= 34;
+//const num2= 56;                     // Not allowed as value can not be redclared to const
+
+var num3= 90;
+var num3= 94;                       // allowed as value can be redeclared to var.
+
+
 // Scope: where a variable can be accessed.
 
 {

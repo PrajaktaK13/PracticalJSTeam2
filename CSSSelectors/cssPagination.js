@@ -12,9 +12,12 @@ Ex3: pageNo: .pagination-paginationMeta
 
 // with page no should be done.
 
-Ex4: https://www.flipkart.com/
+Ex4: https://practice.softwaretestingmentor.com/
 
-specificPage: a.i2eZXn:nth-of-type(3);
+specificPage: button.page-btn.pg-num-btn:nth-of-type(2);
+
+url: https://www.ebay.com/
+specificPage: .pagination__items li:nth-of-type(6)
 
 */
 
