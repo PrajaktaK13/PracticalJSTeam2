@@ -63,11 +63,11 @@ for (let i= 0; i<numbers4.length; i++) {
 // Ex :7 Largest number
 
 let largestnum;
-l//let arr1 = [10, 73, 60, 89, 50];
-largestnum = arr1[0];
-for(let i= 0; i<arr1.length; i++){
-     if(arr1[i] > largestnum){
-         largestnum = arr1[i]; 
+let arr11 = [10, 73, 60, 89, 50];
+largestnum = arr11[0];
+for(let i= 0; i<arr11.length; i++){
+     if(arr11[i] > largestnum){
+         largestnum = arr11[i]; 
      } 
 }
 console.log("Largest Number is ",largestnum);        // o/p : Largest number is 89
@@ -75,16 +75,16 @@ console.log("Largest Number is ",largestnum);        // o/p : Largest number is 
 
 // Ex:8 Second largest number
 
-let arrr1 = [1002, 928, 2003, 504, 834, 5004, 201, 308];
+let arrr1 = [1002, 928, 2003, 504, 834, 5004, 5004, 308];
 let largest = arrr1[0];
 let secondLargest= arrr1[1]; 
 
-for(let i= 0; i<arr1.length; i++){
-     if(arr1[i] > largest){
+for(let i= 0; i<arrr1.length; i++){
+     if(arrr1[i] > largest){
          secondLargest = largest;
          largest = arrr1[i];                 
         
-     } else if(arrr1[i] > secondLargest){
+     } else if(arrr1[i] > secondLargest && arrr1[i]!=largest){
           secondLargest=arrr1[i];
      }     
 }
@@ -203,7 +203,7 @@ for(let i=0; i<arr.length; i++){
 }
 console.log(result);
 
-// first duplicate number
+// first duplicate number with nested loop
 
 let arr1 = [10, 20, 10, 30, 20, 40, 30, 50, 40];;
 
@@ -213,18 +213,19 @@ let found=false;
 for(let i=0; i<arr1.length; i++){
     for(let j=i+1; j<arr1.length; j++){
             if(arr1[i] == arr1[j]){
-                result1 = arr1[i];
+                console.log(arr1[i]);
+               // result1 = arr1[i];
                 found=true;
                 break;                   
     }
 }
-     if(found){
-        break;    
+    if(found){
+    break;    
      
    
 }
 }
-console.log(result1);
+//console.log(result1);
 
 // first duplicate number without nested loop
 
@@ -254,21 +255,34 @@ for(let i=0; i<arrr3.length; i++){
 }
  console.log(result3); 
 
- // Duplicate characters without nested loop
+ // find duplicate numbers without nested loop- first method
 
 let arr4 = [10, 20, 60, 30, 20, 30, 80, 50, 70, 70];
 let result4 = [];
 
-for(let i=0; i<arr4.length; i++){
-    if(arr4.indexOf(arr4[i])!= arr4.lastIndexOf(arr4[i])){
-        if((result4.includes(arr4[i]))){
-            continue;
-        }else{
+// for(let i=0; i<arr4.length; i++){
+//     if(arr4.indexOf(arr4[i])!= arr4.lastIndexOf(arr4[i])){
+//         if((result4.includes(arr4[i]))){
+//             continue;
+//         }else{
+//             result4.push(arr4[i]);
+//         }
+//     }
+// }
+// console.log(result4);
+
+// find duplicate numbers without nested loop- 2nd method
+
+for(let i=0; i<arr4.length;i++){
+    if(!result4.includes(arr4[i])){
+        if(arr4.indexOf(arr4[i])!=arr4.lastIndexOf(arr4[i])){
             result4.push(arr4[i]);
         }
+
     }
 }
 console.log(result4);
+
 
 // find duplicate numbers with nested loop
 
@@ -287,6 +301,20 @@ for(let i=0; i<arr5.length; i++){
     }
 }
 console.log(result5);
+
+// first duplicate number without nested loop
+
+let arr12 = [10, 20, 10, 30, 20, 40, 30, 50, 40];
+
+let result12;
+
+for (let i=0; i<arr12.length; i++){
+    if(arr12.indexOf(arr12[i])!=arr12.lastIndexOf(arr12[i])){
+        result12=arr12[i];
+        break;
+    }
+}
+console.log(result12);
 
 // most frequent number
 

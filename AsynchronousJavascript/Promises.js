@@ -31,7 +31,7 @@ let promise1 = new Promise((resolve, reject) => {
 });        // It does not print anything as here we only creates and resolves the Promise.
 
 
-// .then() - We use .then() to get the result of promise
+// .then() - We use .then() to get the result of resolved promise
 
 let promise2 = new Promise((resolve, reject) => {
     resolve("Login successful");
@@ -49,13 +49,15 @@ then((result) => {          // Receives/handles the result
 
 // .then() with calculation
 
-let promise3 = new Promise((resolve, reject) => {
+let promise3 = new Promise((resolve) => {
     resolve(10);
+  
 });
 
 promise3.then((result) => {
     console.log(result + 5);          // o/p: 15
 }); 
+
 
 
 // .catch()- reject() sends the value to .catch():

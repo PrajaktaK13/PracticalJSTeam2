@@ -22,14 +22,40 @@ console.log(spceCount);
 
 // find duplicate characters
 
-let str3 = "programming";
+let str3 = "programmingag";
+let result4=[];
 for(let i=0 ; i<str3.length; i++){
-    for(let j=i+1 ; j<str3.length; j++){
+  if(!result4.includes(str3[i])){ 
+    for(let j=i+1 ; j<str3.length; j++){                    
         if(str3[i]===str3[j]){
-             console.log("Duplicate character is ", str3[j]);
+            result4.push(str3[i]);
+             break;
         }
     }
 }
+}
+console.log("Duplicate characters are ", result4);
+
+// let str3 = "prograammingg";
+// let result4=[];
+// let found= false;
+// for(let i=0 ; i<str3.length; i++){          
+//        for(let j=i+1 ; j<str3.length; j++){       
+//         if(str3[i]===str3[j]){            
+//                 console.log("first duplicate charcter is "+str3[j]);
+//                 found=true;
+//                 break;
+//             }             
+//     }
+    
+// if (found){
+//  break;
+// } 
+// }
+    
+
+// console.log("Duplicate characters are ", result4);
+
 
 // count each character
 
@@ -172,7 +198,7 @@ let str7 = "programming";
 console.log("Non repeated charcaters are: ");
 for(let i=0; i<str7.length; i++){    
     if(str7.indexOf(str7[i])==str7.lastIndexOf(str7[i])){
-        console.log(str7[i]);        
+        console.log(str7[i]);                
     }
 }
 /* o/p: 
@@ -408,4 +434,17 @@ for(let i=0; i<text5.length; i++){
     }
 }
 console.log(num);            // 123456
+
+
+let str20 = "programmingag";
+let result20=[];
+
+for (let i=0; i<str20.length; i++){
+  if(!result20.includes(str20[i])){
+    if(str20.indexOf(str20[i])!==str20.lastIndexOf(str20[i])){
+      result20.push(str20[i]);      
+    }
+  }
+}
+console.log("Duplicate charcaters are "+result20);
 

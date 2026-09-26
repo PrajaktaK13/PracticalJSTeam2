@@ -97,7 +97,7 @@ console.log(browsers1.includes("chrome"));        // o/p: false
 
 console.log(browsers1.indexOf("Chrome"));                      // o/p: 0 (array index of the element)
 console.log(browsers1.indexOf("Safari"));                      // o/p: -1
-
+  
 
 
 
@@ -165,3 +165,38 @@ splice(1, 1, "Safari")
        |  remove 1
        |
        start index   */
+
+
+       // sort: It changes the original array
+
+       let numbers = [30, 10, 50, 20, 40];
+
+       numbers.sort((a, b) => a - b);
+
+       console.log(numbers);   // [ 10, 20, 30, 40, 50 ]
+
+/*  Methods that CHANGE the original array:
+
+       | Method      | What it does           |
+| ----------- | ---------------------- |
+| `push()`    | Adds at end            |
+| `pop()`     | Removes from end       |
+| `shift()`   | Removes from beginning |
+| `unshift()` | Adds at beginning      |
+| `splice()`  | Adds/removes/replaces  |
+| `sort()`    | Sorts the array        |
+| `reverse()` | Reverses the array     |
+
+❌ Methods that DON'T change the original array:
+
+| Method       | What it does                       |
+| ------------ | ---------------------------------- |
+| `slice()`    | Extracts part of an array          |
+| `includes()` | Checks if value exists             |
+| `indexOf()`  | Finds index                        |
+| `find()`     | Finds first matching element       |
+| `filter()`   | Creates array of matching elements |
+| `map()`      | Creates transformed array          |
+| `forEach()`  | Performs an action on elements     |
+
+*/

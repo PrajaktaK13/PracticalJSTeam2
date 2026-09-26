@@ -6,7 +6,7 @@ let text1 = "JavaScript";
 console.log(text1.charAt(0));                        // o/p: J
 console.log(text1.charAt(4));                        // o/p: S
 
-// charAt() and test[] both can access text
+// charAt() and [] both can access text
 console.log(text1.charAt(2));                                      // o/p: v
 console.log(text1[2]);                                             // o/p: v
 
@@ -58,7 +58,7 @@ let text8 = "JavaScript";
 console.log(text8.slice(0, 4));                     // o/p: Java
 
 // slice() supports negative indexes.
-// slice swaps if start > end
+// substring swaps if start > end
 
 let text = "JavaScript";
 

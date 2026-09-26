@@ -8,10 +8,10 @@ let student = {
 // console.log(Object.keys(student));
 
 // keys and values of objects with for loop
- let keys = Object.keys(student);            // keys = ["name", "age", "city", "role"];
-// for(let i=0; i<keys.length; i++){
-//     console.log(keys[i], student[keys[i]]);
-// }
+let keys = Object.keys(student);            // keys = ["name", "age", "city", "role"];
+for(let i=0; i<keys.length; i++){
+    console.log(keys[i], student[keys[i]]);
+}
 
 // Using the same object, print only the values whose value is a string/ number.
 

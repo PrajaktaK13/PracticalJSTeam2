@@ -1,6 +1,10 @@
 /* Closure = the function + its remembered surrounding lexical environment.
  A closure occurs when an inner function remembers and retains access to variables from its outer
- function's scope even after the outer function has finished executing. */
+ function's scope even after the outer function has finished executing.
+ 
+ 
+ Def: A closure is a function that remembers and has access to variables from its outer 
+ lexical scope even after the outer function has finished execution.*/
 
 let company = "Mindfire";
 
