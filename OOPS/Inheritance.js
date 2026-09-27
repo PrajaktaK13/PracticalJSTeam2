@@ -6,7 +6,7 @@
 // Write with with private, public, protected
 
 
-// Parent class constrictor: 
+// Parent class constructor: 
 
 class Employee {
     constructor(name) {
@@ -64,7 +64,7 @@ Prajakta
 Tester
 Playwright   */
 
-// super(name, role): calls the parent class constructor, it should be called before 'this'
+// super(name, role): calls the parent class constructor, it should be called before 'this'.
 
 
 // Child can have its own methods
@@ -140,7 +140,7 @@ class Employee {
 
 class Tester extends Employee {
 
-    work(name) {                         // Here child calss work() overrides parent class work()
+    work(name) {             // Here child class work() overrides parent class work()
         console.log(name," is testing the application");
     }
 }

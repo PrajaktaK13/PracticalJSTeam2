@@ -117,7 +117,7 @@ arguments
 
 class Employee {
 
-    constructor(name, salary) {
+    constructor() {
         console.log(arguments[0]);
         console.log(arguments[1]);
         console.log(arguments[2]);
@@ -158,5 +158,6 @@ function test(...args) {
     console.log(args);
 }
 test("Prajakta", 60000, "Tester");  // [ 'Prajakta', 60000, 'Tester' ]
+
 
 

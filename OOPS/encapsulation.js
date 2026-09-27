@@ -97,7 +97,7 @@ let emp1 = new Employee();
 console.log(emp1.salary);        // 50000 // calls get salary().
 
 /* here we have written emp.salary not emp.salary() as
-That's because salary is a getter, and JavaScript lets us use it like a property.  */
+that's because salary is a getter, and JavaScript lets us use it like a property.  */
 
 
 
@@ -129,5 +129,5 @@ emp2.salary = 60000;                  // calls setter salary()
 
 console.log(emp2.salary);   // 60000  
 
-// learn private and public difference , variables and methods
+
 

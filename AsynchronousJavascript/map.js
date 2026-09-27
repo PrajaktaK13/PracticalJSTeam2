@@ -104,7 +104,7 @@ status1.set(false, "Inactive");
 
 console.log(status1.get(true));    // Active
 
-// 4. Object as a key- doubt?????????
+// 4. Object as a key
 
 let userC = {
     name: "Prajakta"

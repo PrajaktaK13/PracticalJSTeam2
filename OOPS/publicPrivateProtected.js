@@ -33,7 +33,7 @@ displayEmployee() */
 
 
 // Private: 
-// Praivate properties or methods can notbe used or accessed ouside the class.
+// Praivate properties or methods can not be used or accessed ouside the class.
 // We use '#' for praivte properties or methods.
 
 class Employee {
@@ -73,7 +73,7 @@ class Employee {
         this.#employeeId = employeeId;  // private property
     }
 
-    getEmployeeId() {                  // this is the public method who is returnig private property.
+    getEmployeeId() {                  // this is the public method who is returning private property.
         return this.#employeeId;
     }
 }

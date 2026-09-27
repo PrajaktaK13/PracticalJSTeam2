@@ -33,6 +33,7 @@ console.log(fruits1.has("Orange"));  // false
 
 let fruits10= new Set(["A","p","p","p","l","e"]);
 console.log(fruits10);
+
 // delete()- delete/remove value
 
 let fruits2 = new Set(["Apple", "Banana", "Mango"]);
@@ -66,8 +67,8 @@ users.clear();
 console.log(users);   // Set(0) {}
 
 /* delete() vs clear()
-users.delete("Admin");- Removes one specific value
 
+users.delete("Admin");- Removes one specific value
 users.clear();- Removes everything  */
 
 

@@ -126,8 +126,9 @@ let employee2 = {
     city: "Pune",
     role: "Tester",
     department: "QA",
+    depatement1:"QA",
     location: "Pune",
-    fname:"Rahul",
+    fname:"Amit",
     city1:"Pune"
 };
 
@@ -135,12 +136,25 @@ let emValues= Object.values(employee2);
 let values=[];
 
 for(let i=0; i<emValues.length; i++){
-        if(values.includes(emValues[i])){
-         console.log(emValues[i]);                    
-    }else{
-       values.push(emValues[i]);
+        if(!values.includes(emValues[i])){
+            if(emValues.indexOf(emValues[i])!== emValues.lastIndexOf(emValues[i])){
+                 values.push(emValues[i]);  
+            }                        
     }
 }
+//console.log(values);
+
+// find first duplicate value from same object
+
+for(let i=0; i<emValues.length; i++){
+    if(values.includes(emValues[i])){
+        console.log("First duplicate value is",emValues[i]);
+        break;
+    }else{
+        values.push(emValues[i]);
+    }
+}
+
 
 // count duplicates values with nested loop
 
@@ -156,25 +170,24 @@ let employee3 = {
 let evalues3= Object.values(employee3);
 let duplicates = [];
 
-for(let i = 0; i < evalues3.length; i++){
-
-    if(!duplicates.includes(evalues3[i])){
-
-        let count = 0;
-
-        for(let j = 0; j < evalues3.length; j++){
-
+for(let i = 0; i < evalues3.length; i++){  
+      if(!duplicates.includes(evalues3[i])){   
+        let count = 1;
+        for(let j = i+1; j < evalues3.length; j++){            
             if(evalues3[i] === evalues3[j]){
-                count++;
-            } 
+                count++; 
+                if(!duplicates.includes(evalues3[i])){
+                duplicates.push(evalues3[i]);                                                                             
+            }
         }
-
-        console.log(evalues3[i], "=", count);
-
-        duplicates.push(evalues3[i]);
     }
+
+        console.log(evalues3[i], "=", count);         
+    }
+    
 }
-console.log(duplicates);
+
+console.log("Duplicates: ",duplicates);
 
 // find the key of duplicate value
 
@@ -322,24 +335,25 @@ let employee9 = {
 };
 
 let keys9= Object.keys(employee9);
+//console.log(keys9);
 let maxCount1=0;
 let result1="";
 let resultkey1=[];
 
 for(let i=0; i<keys9.length; i++){
-    let count=0;    
-    for(let j=0; j<keys9.length; j++){
+    let count=1;    
+    for(let j=i+1; j<keys9.length; j++){
         if(employee9[keys9[i]]===employee9[keys9[j]]){
-            count++;
-                       
+            // console.log(keys9[i]);
+            // console.log(employee9[keys9[i]]); 
+            count++;                        
         }
     }
     if(count>maxCount1){
         maxCount1=count;
         result1 = employee9[keys9[i]];
         
-    }
-           
+    }            
 }
 for(let i = 0; i < keys9.length; i++){
 
@@ -348,7 +362,7 @@ for(let i = 0; i < keys9.length; i++){
         resultkey1.push(keys9[i]);
     }
 }
-console.log(resultkey1, result1)
+console.log(resultkey1, result1);
 
 
 

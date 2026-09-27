@@ -28,15 +28,14 @@ console.log("Start");
 greet();
 console.log("End");
 
-function test() {
-    var a = 10;
-}
-console.log(a);                    // ReferenceError
-
 /*output
 Start
 Hello
 End*/
+
+                 // ReferenceError
+
+
 
 /* why we use functions:
 1. Reusability

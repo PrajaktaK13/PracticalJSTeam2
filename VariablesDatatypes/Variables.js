@@ -32,6 +32,11 @@ var num3= 94;                       // allowed as value can be redeclared to var
 //console.log(number);               // not allowed as cosnt has block scope.
 console.log(passed);                 // allowed as var has fuction scope.
 
+function test() {
+    var a = 10;
+}
+console.log(a);                      // ReferenceError: a has function scope
+
 // different types of variables:
 
 let x = 10;              // outer/global-level variable
