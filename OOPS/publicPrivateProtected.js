@@ -56,7 +56,7 @@ let emp1 = new Employee("Prajakta", 50000);
 console.log(emp1.name);       // ✅
 emp1.displaySalary();         // ✅ we can access the private properties binding it in public method.
 
-console.log(emp1.#salary);    // ❌ Error
+//console.log(emp1.#salary);    // ❌ Error
 
 
 // Protected:

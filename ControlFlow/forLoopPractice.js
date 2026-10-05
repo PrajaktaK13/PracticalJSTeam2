@@ -336,6 +336,41 @@ for(let i=1; i<=6; i++){
     }
 
 
+let row11;
+let t11;
+let count11=27;
+
+for(let i=1; i<=4; i++){
+  row11="";
+  count11= count11-((2*i)-1);
+  t11=count11;
+  for(let j=1; j<=4-i;j++){
+    row11=row11+"  ";
+  }
+ let j;
+  for(j=1; j<=(2*i)-1; j++){
+    row11=row11+String.fromCharCode(96+t11)+" ";
+    t11++;
+  }  
+  console.log(row11);  
+}
+
+for(let i=3; i>=1; i--){
+  row11="";
+  count11= count11-((2*i)-1);
+  t11=count11;
+  for(let j=1; j<=4-i;j++){
+    row11=row11+"  ";
+  }
+ let j;
+  for(j=1; j<=(2*i)-1; j++){
+    row11=row11+String.fromCharCode(96+t11)+" ";
+    t11++;
+  } 
+  console.log(row11);
+}
+
+
 
  
 

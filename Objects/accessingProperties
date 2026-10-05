@@ -161,6 +161,61 @@ let employee2 = {
 
 console.log(Object.hasOwn(employee2, "age"));      // true
 console.log(employee2.age);                        // 0
+
+
+let str1= "listen";
+let str2= "silence";
+let found=true;
+let count1={};
+let count2={};
+let isAngram=true;
+
+
+for(let i=0; i<str1.length;i++){
+  let count=1;
+  for(let j=i+1; j<str1.length;j++){
+    let char = str1[i];
+
+    if (count1[char]) {
+        count1[char]++;
+    } else {
+        count1[char] = 1;
+    }
+  } 
+}
+console.log(count1);
+
+for(let i=0; i<str2.length;i++){
+  let count=1;
+  for(let j=i+1; j<str2.length;j++){
+    let char = str1[i];
+
+    if (count2[char]) {
+        count2[char]++;
+    } else {
+        count2[char] = 1;
+    }
+  } 
+}
+
+console.log(count2);
+
+let isAnagram = true;
+
+for (let char in count1) {
+
+    if (count1[char] !== count2[char]) {
+        isAnagram = false;
+        break;
+    }
+}
+
+if(isAngram){
+  console.log("Both strings are Angram");
+}else{
+  console.log("Both strings are not Angram");
+}
+
  
 
 

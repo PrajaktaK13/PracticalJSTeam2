@@ -219,7 +219,7 @@ console.log(regex4.test("I am learning Selenium"));   // false
 
 //5. [^ ] — NOT
 
-let regex5 = /[^0-9]/; 
+let regex5 = /[^0-9]/; // Find atleast one character that is not digit
 
 console.log(regex5.test("123"));  // false
 console.log(regex5.test("123a")); // true
@@ -236,6 +236,7 @@ let regex6 = /c.t/;              // . means almost any single character.
 console.log(regex6.test("cat")); // true
 console.log(regex6.test("cot")); // true
 console.log(regex6.test("cut")); // true
+console.log(regex6.test("c1t")); // true
 
 
 //7. * — Zero or more
@@ -247,6 +248,7 @@ console.log(regex7.test("abc"));   // true
 console.log(regex7.test("abbbc")); // true
 
 
+
 //8. + — One or more
 
 let regex8 = /ab+c/;      // Now at least one b is required.
@@ -254,6 +256,7 @@ let regex8 = /ab+c/;      // Now at least one b is required.
 console.log(regex8.test("ac"));    // false
 console.log(regex8.test("abc"));   // true
 console.log(regex8.test("abbbc")); // true
+console.log(regex8.test("avc"));   // false
 
 
 //9. ? — Zero or one

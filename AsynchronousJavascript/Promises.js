@@ -294,20 +294,20 @@ Promise.all([p7, p8, p9])
 
 // Promise all with timeout
 
-let px = new Promise(resolve => {
-    setTimeout(() => resolve("A"), 3000);
-});
+// let px = new Promise(resolve => {
+//     setTimeout(() => resolve("A"), 3000);
+// });
 
-let py = new Promise(resolve => {
-    setTimeout(() => resolve("B"), 1000);
-});
+// let py = new Promise(resolve => {
+//     setTimeout(() => resolve("B"), 1000);
+// });
 
-let pz = new Promise(resolve => {
-    setTimeout(() => resolve("C"), 2000);
-});
+// let pz = new Promise(resolve => {
+//     setTimeout(() => resolve("C"), 2000);
+// });
 
-Promise.all([px, py, pz])
-    .then(results => console.log(results));    // o/p: [ 'A', 'B', 'C' ]
+// Promise.all([px, py, pz])
+//     .then(results => console.log(results));    // o/p: [ 'A', 'B', 'C' ]
 
 
     // Promise.race():
@@ -385,3 +385,45 @@ Promise.race([p11, p12, p13])
 
 // Even though Orders wins the race, p10 and p30 don't get cancelled automatically.
 // They continue running in the background.
+
+let px= new Promise((reject,resolve)=>{
+  setTimeout(()=> resolve("Ready"),1000);
+})
+
+let py= new Promise((resolve,reject)=>{
+  setTimeout(()=> resolve("successful"),2000);
+})
+
+let pz= new Promise((resolve,reject)=>{
+  setTimeout(()=> reject("error"),3000);
+}
+  )
+
+Promise.all([py,px,pz])
+  .then((result)=>{
+  console.log(result);
+}  )
+.catch((error)=>{
+  console.log(error);
+})
+
+async function test() {
+    return "Hello";
+}
+
+test().then((value)=>{
+   console.log(value);
+});
+
+function hello(){
+    return Promise.resolve("Hello");
+}
+async function test() {
+
+    let result = await hello();
+
+    console.log(result);
+}
+
+test();
+

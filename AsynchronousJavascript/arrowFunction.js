@@ -118,6 +118,7 @@ const user = {
     greet: () => {
         console.log(this.name);
     }
+    
 };
 
 user.greet();     // undefined

@@ -125,6 +125,8 @@ console.log("Spread:",...numbers1);
 
 // Rest → collect  
 
+console.log("Rest:", numbers1);
+
 function test(...numbers) {
     console.log("Rest:",numbers);
 }

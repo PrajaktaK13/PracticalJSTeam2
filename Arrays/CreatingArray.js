@@ -82,3 +82,9 @@ console.log(numbers1);
 10
 15
 O/p: [5, 10, 15] */
+
+const numbers112 = [10, 20, 30];
+
+numbers112.push(50);
+
+console.log(numbers112)

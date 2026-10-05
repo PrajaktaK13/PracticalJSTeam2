@@ -430,3 +430,8 @@ async function testPayment() {
     console.log(successfulPayments, failedPayments);         
 }
 testPayment();
+
+console.log("10"-3) 
+
+
+console.log(3*"10") 

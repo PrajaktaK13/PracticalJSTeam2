@@ -111,7 +111,7 @@ console.log("Hello" || "World");
 console.log(false || "Hello");   // Hello
 console.log(false && "Hello");   // false
 console.log(true && "Hello");    // Hello
-console.log("Hello" && true);
+console.log("Hello" && true);    //true
 
 
 
